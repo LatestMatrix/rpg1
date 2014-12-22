@@ -649,7 +649,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &677743085
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1465,6 +1465,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1611833437}
   - 114: {fileID: 1611833436}
+  - 95: {fileID: 1611833438}
   m_Layer: 0
   m_Name: Entry
   m_TagString: Untagged
@@ -1495,6 +1496,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!95 &1611833438
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1611833435}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d10c3ee4b15bece4289c55eda777ac6c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1649196726
 GameObject:
   m_ObjectHideFlags: 0
