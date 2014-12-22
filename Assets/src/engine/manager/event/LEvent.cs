@@ -3,10 +3,19 @@ using System.Collections;
 
 namespace engine.manager
 {
+    public enum LEventType
+    {
+        AIEvent,//AI事件
+    }
+
     public class LEvent
     {
-        public string name = "";
-        public Object data = null;
+        public LEventType type;
+
+        public LEvent()
+        {
+
+        }
 
     }
 }

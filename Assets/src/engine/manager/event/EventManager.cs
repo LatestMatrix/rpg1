@@ -8,42 +8,42 @@ namespace engine.manager
     public class EventManager
     {
         public delegate void EventDelegate(LEvent e);
-        private Dictionary<string, List<EventDelegate>> _map;
+        private Dictionary<LEventType, List<EventDelegate>> _map;
 
         public EventManager()
         {
-            _map = new Dictionary<string, List<EventDelegate>>();
+            _map = new Dictionary<LEventType, List<EventDelegate>>();
         }
 
-        public void addEvent(string e, EventDelegate d)
+        public void addEvent(LEventType t, EventDelegate d)
         {
-            if (_map.ContainsKey(e) == false)
+            if (_map.ContainsKey(t) == false)
             {
-                _map.Add(e, new List<EventDelegate>());
+                _map.Add(t, new List<EventDelegate>());
             }
-            if (hasSameRegister(e, d))
+            if (hasSameRegister(t, d))
             {
                 return;
             }
-            _map[e].Add(d);
+            _map[t].Add(d);
         }
 
-        public void removeEvent(string e, EventDelegate d)
+        public void removeEvent(LEventType t, EventDelegate d)
         {
-            if (_map.ContainsKey(e) == false)
+            if (_map.ContainsKey(t) == false)
             {
                 return;
             }
-            _map[e].Remove(d);
+            _map[t].Remove(d);
         }
 
         public void sendEvent(LEvent e)
         {
-            if (_map.ContainsKey(e.name) == false)
+            if (_map.ContainsKey(e.type) == false)
             {
                 return;
             }
-            List<EventDelegate> list = _map[e.name];
+            List<EventDelegate> list = _map[e.type];
             int count = list.Count;
             for (int i = 0; i < count; i++)
             {
@@ -51,9 +51,9 @@ namespace engine.manager
             }
         }
 
-        private bool hasSameRegister(string e, EventDelegate d)
+        private bool hasSameRegister(LEventType t, EventDelegate d)
         {
-            List<EventDelegate> list = _map[e];
+            List<EventDelegate> list = _map[t];
             int count = list.Count;
             for (int i = 0; i < count; i++)
             {

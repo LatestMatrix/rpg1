@@ -6,7 +6,7 @@ using engine.manager;
 public class Main : MonoBehaviour
 {
     private MoveCtrl _mc;
-    private AICtrl _ac;
+    private MainCtrl _mac;
 
     private KeyManager _km;
     // Use this for initialization
@@ -18,7 +18,7 @@ public class Main : MonoBehaviour
         LEngine.rm = new ResManager();
 
         _mc = new MoveCtrl();
-        _ac = new AICtrl();
+        _mac = new MainCtrl();
 
         _km = new KeyManager();
     }
@@ -26,6 +26,6 @@ public class Main : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        _mac.work();
     }
 }
