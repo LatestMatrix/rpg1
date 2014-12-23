@@ -9,8 +9,11 @@ ModelImporter:
     400000: bip_Weapons
     400002: //RootNode
     400004: Weapons
+    2300000: Weapons
+    3300000: Weapons
     4300000: Weapons
     9500000: //RootNode
+    11100000: //RootNode
     13700000: Weapons
   materials:
     importMaterials: 1
@@ -21,7 +24,7 @@ ModelImporter:
     bakeSimulation: 0
     optimizeGameObjects: 0
     motionNodeName: 
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: .5
     animationPositionError: .5
     animationScaleError: .5
