@@ -11,6 +11,7 @@ namespace engine.manager
         public ResManager()
         {
             loadConfigFile();
+            loadUI();
         }
 
         private void loadConfigFile()
@@ -25,6 +26,14 @@ namespace engine.manager
             //db.ChangePassword("");
             reader.Close();
             db.CloseSqlConnection();
+        }
+
+        private void loadUI()
+        {
+            GameObject obj = Resources.Load<GameObject>("ui/joystick");
+            NGUITools.AddChild(NGUITools.FindCameraForLayer((obj).layer).gameObject, obj);
+            obj = Resources.Load<GameObject>("ui/skillArea");
+            NGUITools.AddChild(NGUITools.FindCameraForLayer((obj).layer).gameObject, obj);
         }
 
         public Object load(string name, LoadType t = LoadType.RESOURCE)

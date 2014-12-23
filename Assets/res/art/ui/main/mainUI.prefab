@@ -43,7 +43,7 @@ MonoBehaviour:
   mSprites:
   - name: joystick
     x: 0
-    y: 242
+    y: 137
     width: 103
     height: 102
     borderLeft: 0
@@ -69,7 +69,7 @@ MonoBehaviour:
     paddingBottom: 1
   - name: skill1
     x: 438
-    y: 381
+    y: 374
     width: 65
     height: 65
     borderLeft: 0
@@ -82,7 +82,7 @@ MonoBehaviour:
     paddingBottom: 1
   - name: skillBase
     x: 0
-    y: 58
+    y: 45
     width: 91
     height: 91
     borderLeft: 0
@@ -119,24 +119,37 @@ MonoBehaviour:
     paddingRight: 2
     paddingTop: 1
     paddingBottom: 2
-  - name: skillcdBig
-    x: 0
-    y: 150
-    width: 91
-    height: 91
+  - name: skillcdSmall
+    x: 105
+    y: 279
+    width: 65
+    height: 65
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
     paddingLeft: 0
-    paddingRight: 0
+    paddingRight: 1
     paddingTop: 0
-    paddingBottom: 0
-  - name: skillcdSmall
+    paddingBottom: 1
+  - name: skillTopBig
+    x: 0
+    y: 240
+    width: 104
+    height: 104
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 1
+    paddingTop: 0
+    paddingBottom: 1
+  - name: skillTopSmall
     x: 438
-    y: 447
-    width: 65
-    height: 65
+    y: 440
+    width: 72
+    height: 72
     borderLeft: 0
     borderRight: 0
     borderTop: 0

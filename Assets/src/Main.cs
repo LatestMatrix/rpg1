@@ -26,6 +26,7 @@ public class Main : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _mac.work();
+        _mac.onUpdate();
+        _km.onUpdate();
     }
 }

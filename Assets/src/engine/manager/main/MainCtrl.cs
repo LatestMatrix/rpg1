@@ -7,39 +7,32 @@ namespace engine.manager
 {
     public class MainCtrl
     {
-        private List<LMainEvent> _eList;
-        private List<LMainEvent> _eListClone;
-        private List<BaseMain> _wList;
+        private List<LEvent> _eList;
+        private List<LEvent> _eListClone;
         public MainCtrl()
         {
-            _eList = new List<LMainEvent>();
-            _eListClone = new List<LMainEvent>();
-            _wList = new List<BaseMain>();
-            _wList.Add(new MoveMain());
+            _eList = new List<LEvent>();
+            _eListClone = new List<LEvent>();
+
             initEvent();
         }
 
         private void initEvent()
         {
-            LEngine.em.addEvent(LEventType.AIEvent, onReceive);
+            LEngine.em.addEvent(LEventType.MainEvent, onReceive);
         }
 
         private void onReceive(LEvent e)
         {
-            LMainEvent ae = e as LMainEvent;
-            _wList[(int)(ae.aiType)].add(ref _eList, ae);
+            _eList.Add(e);
         }
 
-        public void work()
+        public void onUpdate()
         {
             _eListClone.Clear();
             _eListClone.AddRange(_eList);
             _eList.Clear();
-            foreach (LMainEvent e in _eListClone)
-            {
-                _wList[(int)(e.aiType)].work(e);
-            }
-            
+
         }
 
     }
