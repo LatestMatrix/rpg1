@@ -3,16 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace engine.manager
+namespace engine.core
 {
-    public class MoveCtrl
+    public class Live : Dummy, IMove, IAI
     {
-        public MoveCtrl()
-        {
+        public Skeleton s;
 
-        }
-
-        public void OnUpdate()
+        public Live()
         {
 
         }

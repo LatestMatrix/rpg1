@@ -14,25 +14,24 @@ namespace engine.manager
             _eList = new List<LEvent>();
             _eListClone = new List<LEvent>();
 
-            initEvent();
+            InitEvent();
         }
 
-        private void initEvent()
+        private void InitEvent()
         {
-            LEngine.em.addEvent(LEventType.MainEvent, onReceive);
+            LEngine.em.AddEvent(LEventType.MainEvent, OnReceive);
         }
 
-        private void onReceive(LEvent e)
+        private void OnReceive(LEvent e)
         {
             _eList.Add(e);
         }
 
-        public void onUpdate()
+        public void OnUpdate()
         {
             _eListClone.Clear();
             _eListClone.AddRange(_eList);
             _eList.Clear();
-
         }
 
     }

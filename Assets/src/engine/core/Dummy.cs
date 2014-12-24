@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEngine;
 
-namespace engine.manager
+namespace engine.core
 {
-    public enum LoadType
+    public class Dummy : MonoBehaviour
     {
-        RESOURCE,
-        ASSET_BUNDLE
+
     }
 }

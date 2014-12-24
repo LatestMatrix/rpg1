@@ -26,7 +26,8 @@ public class Main : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _mac.onUpdate();
-        _km.onUpdate();
+        _mac.OnUpdate();
+        _km.OnUpdate();
+        _mc.OnUpdate();
     }
 }

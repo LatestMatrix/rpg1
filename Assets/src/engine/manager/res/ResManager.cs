@@ -10,25 +10,25 @@ namespace engine.manager
 
         public ResManager()
         {
-            loadConfigFile();
-            loadUI();
+            LoadConfigFile();
+            LoadUI();
         }
 
-        private void loadConfigFile()
+        private void LoadConfigFile()
         {
             DB db = new DB(@"Data Source=" + Application.dataPath + "/Resources/config/config.sqlite");
             SqliteDataReader reader = db.ReadFullTable("config");
             while (reader.Read())
             {
-                Log.log(reader.GetString(0));
-                Log.log(reader.GetString(1));
+                Log.Trace(reader.GetString(0));
+                Log.Trace(reader.GetString(1));
             }
             //db.ChangePassword("");
             reader.Close();
             db.CloseSqlConnection();
         }
 
-        private void loadUI()
+        private void LoadUI()
         {
             GameObject obj = Resources.Load<GameObject>("ui/joystick");
             NGUITools.AddChild(NGUITools.FindCameraForLayer((obj).layer).gameObject, obj);
@@ -36,7 +36,7 @@ namespace engine.manager
             NGUITools.AddChild(NGUITools.FindCameraForLayer((obj).layer).gameObject, obj);
         }
 
-        public Object load(string name, LoadType t = LoadType.RESOURCE)
+        public Object Load(string name, LoadType t = LoadType.RESOURCE)
         {
             return null;
         }

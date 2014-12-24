@@ -13,78 +13,78 @@ namespace engine.manager
         private float _passTime = 0f;
         public KeyManager()
         {
-            initEvent();
-            initJoy();
-            initSkill();
+            InitEvent();
+            InitJoy();
+            InitSkill();
         }
 
-        private void initEvent()
+        private void InitEvent()
         {
             
         }
 
-        private void initJoy()
+        private void InitJoy()
         {
             GameObject tar = GameObject.Find("joyTarget");
             UIJoystick joy = tar.GetComponent<UIJoystick>();
-            joy.dragMove += dragMove;
+            joy.dragMove += DragMove;
         }
 
-        private void dragMove(Vector2 dir)
+        private void DragMove(Vector2 dir)
         {
-            LEngine.em.sendEvent(new LEvent(LEventType.MainEvent, dir));
+            LEngine.em.DispatchEvent(new LEvent(LEventType.MainEvent, dir));
         }
 
-        private void initSkill()
+        private void InitSkill()
         {
             GameObject btn;
             btn = GameObject.Find("skill1Btn");
-            UIEventListener.Get(btn).onPress = onSkill1Press;
+            UIEventListener.Get(btn).onPress = OnSkill1Press;
 
             btn = GameObject.Find("skill2Btn");
-            UIEventListener.Get(btn).onPress = onSkill2Press;
+            UIEventListener.Get(btn).onPress = OnSkill2Press;
 
             btn = GameObject.Find("skill3Btn");
-            UIEventListener.Get(btn).onPress = onSkill3Press;
+            UIEventListener.Get(btn).onPress = OnSkill3Press;
 
             btn = GameObject.Find("skill4Btn");
-            UIEventListener.Get(btn).onPress = onSkill4Press;
+            UIEventListener.Get(btn).onPress = OnSkill4Press;
         }
 
-        private void onSkill1Press(GameObject btn, bool state)
+        private void OnSkill1Press(GameObject btn, bool state)
         {
             _btn1State = state;
             if (state)
             {
-                Log.log("!!!");
+                Log.Trace("!!!");
             }
         }
 
-        private void onSkill2Press(GameObject btn, bool state)
+        private void OnSkill2Press(GameObject btn, bool state)
         {
             if(state)
             {
-                Log.log("222");
+                Log.Trace("222");
             }
         }
 
-        private void onSkill3Press(GameObject btn, bool state)
+        private void OnSkill3Press(GameObject btn, bool state)
         {
             if (state)
             {
-                Log.log("333");
+                Log.Trace("333");
             }
         }
 
-        private void onSkill4Press(GameObject btn, bool state)
+        private void OnSkill4Press(GameObject btn, bool state)
         {
             if (state)
             {
-                Log.log("444");
+                Log.Trace("444");
             }
         }
 
-        public void onUpdate()
+        public void OnUpdate()
         {
             if (_btn1State == true)
             {
@@ -92,7 +92,7 @@ namespace engine.manager
                 if (_passTime > _repetTime)
                 {
                     _passTime -= _repetTime;
-                    Log.log("!!!");
+                    Log.Trace("!!!");
                 }
             }
         }

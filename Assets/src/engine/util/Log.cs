@@ -11,7 +11,7 @@ public class Log
     public static int WC = 0xFF;
     public static int EC = 0xFF;
 
-    public static void log(object message, int channel = 1)
+    public static void Trace(object message, int channel = 1)
     {
         if ((channel & LC) != 0)
         {
@@ -19,7 +19,7 @@ public class Log
         }
     }
 
-    public static void warn(object message, int channel = 1)
+    public static void Warn(object message, int channel = 1)
     {
         if ((channel & WC) != 0)
         {
@@ -27,7 +27,7 @@ public class Log
         }
     }
 
-    public static void error(object message, int channel = 1)
+    public static void Error(object message, int channel = 1)
     {
         if ((channel & EC) != 0)
         {

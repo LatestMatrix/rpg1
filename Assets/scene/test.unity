@@ -1326,7 +1326,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1142411584
 Transform:
   m_ObjectHideFlags: 0
@@ -1550,6 +1550,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d1dffa6f9552dc34e895ba17749e5e46, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d1dffa6f9552dc34e895ba17749e5e46, type: 2}
   m_RootGameObject: {fileID: 1142411583}
@@ -1708,7 +1712,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1611833437}
   - 114: {fileID: 1611833436}
-  - 95: {fileID: 1611833438}
   m_Layer: 0
   m_Name: Entry
   m_TagString: Untagged
@@ -1739,21 +1742,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
---- !u!95 &1611833438
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1611833435}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d10c3ee4b15bece4289c55eda777ac6c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1618422642
 GameObject:
   m_ObjectHideFlags: 0

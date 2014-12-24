@@ -15,20 +15,20 @@ namespace engine.manager
             _map = new Dictionary<LEventType, List<EventDelegate>>();
         }
 
-        public void addEvent(LEventType t, EventDelegate d)
+        public void AddEvent(LEventType t, EventDelegate d)
         {
             if (_map.ContainsKey(t) == false)
             {
                 _map.Add(t, new List<EventDelegate>());
             }
-            if (hasSameRegister(t, d))
+            if (HasSameRegister(t, d))
             {
                 return;
             }
             _map[t].Add(d);
         }
 
-        public void removeEvent(LEventType t, EventDelegate d)
+        public void RemoveEvent(LEventType t, EventDelegate d)
         {
             if (_map.ContainsKey(t) == false)
             {
@@ -37,7 +37,7 @@ namespace engine.manager
             _map[t].Remove(d);
         }
 
-        public void sendEvent(LEvent e)
+        public void DispatchEvent(LEvent e)
         {
             if (_map.ContainsKey(e.type) == false)
             {
@@ -51,7 +51,7 @@ namespace engine.manager
             }
         }
 
-        private bool hasSameRegister(LEventType t, EventDelegate d)
+        private bool HasSameRegister(LEventType t, EventDelegate d)
         {
             List<EventDelegate> list = _map[t];
             int count = list.Count;

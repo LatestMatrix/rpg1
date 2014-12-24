@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace engine.manager
+namespace engine.core
 {
-    public enum LoadType
+    public class Monster : Live
     {
-        RESOURCE,
-        ASSET_BUNDLE
     }
 }
