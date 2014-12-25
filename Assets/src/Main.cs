@@ -30,4 +30,10 @@ public class Main : MonoBehaviour
         _km.OnUpdate();
         _mc.OnUpdate();
     }
+
+    private void OnGUI()
+    {
+        GUILayout.Label("FPS:" + (1 / Time.deltaTime).ToString("f0"));
+    }
+
 }

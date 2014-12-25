@@ -14,31 +14,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: 2stand
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: 2att1
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: 2att2
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: 2att3
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: 2att4
+  - m_Name: 2att
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -57,6 +33,12 @@ AnimatorController:
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
   - m_Name: 2skill3
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: stop
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -86,8 +68,24 @@ Transition:
   m_TransitionDuration: .681818187
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 5
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2run
+    m_EventTreshold: 0
+    m_ExitTime: .318181813
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .318181813
+  - m_ConditionMode: 2
     m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: .318181813
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill2
+    m_EventTreshold: 0
+    m_ExitTime: .318181813
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill3
     m_EventTreshold: 0
     m_ExitTime: .318181813
   m_Atomic: 1
@@ -110,6 +108,18 @@ Transition:
     m_ConditionEvent: 2skill2
     m_EventTreshold: 0
     m_ExitTime: .5
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2run
+    m_EventTreshold: 0
+    m_ExitTime: .5
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: .5
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill3
+    m_EventTreshold: 0
+    m_ExitTime: .5
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
@@ -126,7 +136,7 @@ Transition:
   m_TransitionDuration: 1.01150441
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 5
+  - m_ConditionMode: 2
     m_ConditionEvent: 2run
     m_EventTreshold: 0
     m_ExitTime: 0
@@ -147,7 +157,15 @@ Transition:
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: 2att1
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill3
     m_EventTreshold: 0
     m_ExitTime: 0
   m_Atomic: 1
@@ -187,7 +205,27 @@ Transition:
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: 2stand
+    m_ConditionEvent: stop
+    m_EventTreshold: 0
+    m_ExitTime: .659090877
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2run
+    m_EventTreshold: 0
+    m_ExitTime: .659090877
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .659090877
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: .659090877
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill2
+    m_EventTreshold: 0
+    m_ExitTime: .659090877
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill3
     m_EventTreshold: 0
     m_ExitTime: .659090877
   m_Atomic: 1
@@ -206,8 +244,8 @@ Transition:
   m_TransitionDuration: 1.5
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 5
-    m_ConditionEvent: 
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2run
     m_EventTreshold: 0
     m_ExitTime: 0
   m_Atomic: 1
@@ -227,7 +265,15 @@ Transition:
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: 2att1
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .25
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: .25
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill2
     m_EventTreshold: 0
     m_ExitTime: .25
   m_Atomic: 1
@@ -250,6 +296,14 @@ Transition:
     m_ConditionEvent: 2skill3
     m_EventTreshold: 0
     m_ExitTime: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: 0
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
@@ -270,6 +324,22 @@ Transition:
     m_ConditionEvent: 2run
     m_EventTreshold: 0
     m_ExitTime: .423076987
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .423076987
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: .423076987
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill2
+    m_EventTreshold: 0
+    m_ExitTime: .423076987
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill3
+    m_EventTreshold: 0
+    m_ExitTime: .423076987
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
@@ -287,7 +357,27 @@ Transition:
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: 2att1
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .659090877
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2run
+    m_EventTreshold: 0
+    m_ExitTime: .659090877
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: .659090877
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill2
+    m_EventTreshold: 0
+    m_ExitTime: .659090877
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill3
+    m_EventTreshold: 0
+    m_ExitTime: .659090877
+  - m_ConditionMode: 2
+    m_ConditionEvent: stop
     m_EventTreshold: 0
     m_ExitTime: .659090877
   m_Atomic: 1
@@ -306,8 +396,16 @@ Transition:
   m_TransitionDuration: .75
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 5
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .25
+  - m_ConditionMode: 2
     m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: .25
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill2
     m_EventTreshold: 0
     m_ExitTime: .25
   m_Atomic: 1
@@ -346,8 +444,24 @@ Transition:
   m_TransitionDuration: .1875
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 5
+  - m_ConditionMode: 1
+    m_ConditionEvent: 2skill3
+    m_EventTreshold: 0
+    m_ExitTime: .8125
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2run
+    m_EventTreshold: 0
+    m_ExitTime: .8125
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .8125
+  - m_ConditionMode: 2
     m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: .8125
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill2
     m_EventTreshold: 0
     m_ExitTime: .8125
   m_Atomic: 1
@@ -368,6 +482,22 @@ Transition:
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: 2skill2
+    m_EventTreshold: 0
+    m_ExitTime: .8125
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2run
+    m_EventTreshold: 0
+    m_ExitTime: .8125
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .8125
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: .8125
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill3
     m_EventTreshold: 0
     m_ExitTime: .8125
   m_Atomic: 1
@@ -407,7 +537,15 @@ Transition:
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: 2att1
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .673913062
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill2
+    m_EventTreshold: 0
+    m_ExitTime: .673913062
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill3
     m_EventTreshold: 0
     m_ExitTime: .673913062
   m_Atomic: 1
@@ -426,7 +564,7 @@ Transition:
   m_TransitionDuration: 1.24999988
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 5
+  - m_ConditionMode: 2
     m_ConditionEvent: 2run
     m_EventTreshold: 0
     m_ExitTime: 0
@@ -448,6 +586,14 @@ Transition:
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: 2skill3
+    m_EventTreshold: 0
+    m_ExitTime: .673913062
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .673913062
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill2
     m_EventTreshold: 0
     m_ExitTime: .673913062
   m_Atomic: 1
@@ -486,8 +632,16 @@ Transition:
   m_TransitionDuration: .326086938
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 5
-    m_ConditionEvent: 2skill1
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .673913062
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill2
+    m_EventTreshold: 0
+    m_ExitTime: .673913062
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill3
     m_EventTreshold: 0
     m_ExitTime: .673913062
   m_Atomic: 1
@@ -510,6 +664,14 @@ Transition:
     m_ConditionEvent: 2skill2
     m_EventTreshold: 0
     m_ExitTime: .673913062
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .673913062
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill3
+    m_EventTreshold: 0
+    m_ExitTime: .673913062
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
@@ -527,7 +689,23 @@ Transition:
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: 2att3
+    m_ConditionEvent: 2run
+    m_EventTreshold: 0
+    m_ExitTime: .37500006
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .37500006
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: .37500006
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill2
+    m_EventTreshold: 0
+    m_ExitTime: .37500006
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill3
     m_EventTreshold: 0
     m_ExitTime: .37500006
   m_Atomic: 1
@@ -550,6 +728,22 @@ Transition:
     m_ConditionEvent: 2skill2
     m_EventTreshold: 0
     m_ExitTime: .423076987
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2run
+    m_EventTreshold: 0
+    m_ExitTime: .423076987
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .423076987
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: .423076987
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill3
+    m_EventTreshold: 0
+    m_ExitTime: .423076987
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
@@ -566,8 +760,8 @@ Transition:
   m_TransitionDuration: .576923013
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 5
-    m_ConditionEvent: 2skill1
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2run
     m_EventTreshold: 0
     m_ExitTime: .423076987
   m_Atomic: 1
@@ -590,6 +784,14 @@ Transition:
     m_ConditionEvent: 2skill2
     m_EventTreshold: 0
     m_ExitTime: .25
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .25
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: .25
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
@@ -610,6 +812,26 @@ Transition:
     m_ConditionEvent: 2skill1
     m_EventTreshold: 0
     m_ExitTime: .659090877
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2run
+    m_EventTreshold: 0
+    m_ExitTime: .659090877
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .659090877
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill2
+    m_EventTreshold: 0
+    m_ExitTime: .659090877
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill3
+    m_EventTreshold: 0
+    m_ExitTime: .659090877
+  - m_ConditionMode: 2
+    m_ConditionEvent: stop
+    m_EventTreshold: 0
+    m_ExitTime: .659090877
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
@@ -627,7 +849,23 @@ Transition:
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: 2att2
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .318181813
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2run
+    m_EventTreshold: 0
+    m_ExitTime: .318181813
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: .318181813
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill2
+    m_EventTreshold: 0
+    m_ExitTime: .318181813
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill3
     m_EventTreshold: 0
     m_ExitTime: .318181813
   m_Atomic: 1
@@ -647,7 +885,23 @@ Transition:
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: 2att1
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .8125
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2run
+    m_EventTreshold: 0
+    m_ExitTime: .8125
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: .8125
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill2
+    m_EventTreshold: 0
+    m_ExitTime: .8125
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill3
     m_EventTreshold: 0
     m_ExitTime: .8125
   m_Atomic: 1
@@ -670,6 +924,22 @@ Transition:
     m_ConditionEvent: 2skill2
     m_EventTreshold: 0
     m_ExitTime: .37500006
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2run
+    m_EventTreshold: 0
+    m_ExitTime: .37500006
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .37500006
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: .37500006
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill3
+    m_EventTreshold: 0
+    m_ExitTime: .37500006
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
@@ -688,6 +958,14 @@ Transition:
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: .25
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .25
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill2
     m_EventTreshold: 0
     m_ExitTime: .25
   m_Atomic: 1
@@ -710,6 +988,18 @@ Transition:
     m_ConditionEvent: 2skill1
     m_EventTreshold: 0
     m_ExitTime: .5
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2run
+    m_EventTreshold: 0
+    m_ExitTime: .5
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill2
+    m_EventTreshold: 0
+    m_ExitTime: .5
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill3
+    m_EventTreshold: 0
+    m_ExitTime: .5
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
@@ -728,6 +1018,22 @@ Transition:
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: .8125
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2run
+    m_EventTreshold: 0
+    m_ExitTime: .8125
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .8125
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill2
+    m_EventTreshold: 0
+    m_ExitTime: .8125
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill3
     m_EventTreshold: 0
     m_ExitTime: .8125
   m_Atomic: 1
@@ -750,6 +1056,22 @@ Transition:
     m_ConditionEvent: 2skill1
     m_EventTreshold: 0
     m_ExitTime: .37500006
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2run
+    m_EventTreshold: 0
+    m_ExitTime: .37500006
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .37500006
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill2
+    m_EventTreshold: 0
+    m_ExitTime: .37500006
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill3
+    m_EventTreshold: 0
+    m_ExitTime: .37500006
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
@@ -768,6 +1090,26 @@ Transition:
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: 2skill2
+    m_EventTreshold: 0
+    m_ExitTime: .659090877
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2run
+    m_EventTreshold: 0
+    m_ExitTime: .659090877
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .659090877
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: .659090877
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill3
+    m_EventTreshold: 0
+    m_ExitTime: .659090877
+  - m_ConditionMode: 2
+    m_ConditionEvent: stop
     m_EventTreshold: 0
     m_ExitTime: .659090877
   m_Atomic: 1
@@ -810,6 +1152,22 @@ Transition:
     m_ConditionEvent: 2run
     m_EventTreshold: 0
     m_ExitTime: .37500006
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .37500006
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: .37500006
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill2
+    m_EventTreshold: 0
+    m_ExitTime: .37500006
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill3
+    m_EventTreshold: 0
+    m_ExitTime: .37500006
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
@@ -830,6 +1188,18 @@ Transition:
     m_ConditionEvent: 2skill3
     m_EventTreshold: 0
     m_ExitTime: .5
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2run
+    m_EventTreshold: 0
+    m_ExitTime: .5
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: .5
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill2
+    m_EventTreshold: 0
+    m_ExitTime: .5
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
@@ -846,8 +1216,20 @@ Transition:
   m_TransitionDuration: .5
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 5
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2run
+    m_EventTreshold: 0
+    m_ExitTime: .5
+  - m_ConditionMode: 2
     m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: .5
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill2
+    m_EventTreshold: 0
+    m_ExitTime: .5
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill3
     m_EventTreshold: 0
     m_ExitTime: .5
   m_Atomic: 1
@@ -870,6 +1252,22 @@ Transition:
     m_ConditionEvent: 2skill1
     m_EventTreshold: 0
     m_ExitTime: .318181813
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2run
+    m_EventTreshold: 0
+    m_ExitTime: .318181813
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .318181813
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill2
+    m_EventTreshold: 0
+    m_ExitTime: .318181813
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill3
+    m_EventTreshold: 0
+    m_ExitTime: .318181813
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
@@ -886,8 +1284,24 @@ Transition:
   m_TransitionDuration: .576923013
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 5
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2run
+    m_EventTreshold: 0
+    m_ExitTime: .423076987
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .423076987
+  - m_ConditionMode: 2
     m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: .423076987
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill2
+    m_EventTreshold: 0
+    m_ExitTime: .423076987
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill3
     m_EventTreshold: 0
     m_ExitTime: .423076987
   m_Atomic: 1
@@ -930,6 +1344,14 @@ Transition:
     m_ConditionEvent: 2skill1
     m_EventTreshold: 0
     m_ExitTime: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill3
+    m_EventTreshold: 0
+    m_ExitTime: 0
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
@@ -947,7 +1369,23 @@ Transition:
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: 2att4
+    m_ConditionEvent: 2run
+    m_EventTreshold: 0
+    m_ExitTime: .423076987
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .423076987
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: .423076987
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill2
+    m_EventTreshold: 0
+    m_ExitTime: .423076987
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill3
     m_EventTreshold: 0
     m_ExitTime: .423076987
   m_Atomic: 1
@@ -970,6 +1408,22 @@ Transition:
     m_ConditionEvent: 2skill3
     m_EventTreshold: 0
     m_ExitTime: .423076987
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2run
+    m_EventTreshold: 0
+    m_ExitTime: .423076987
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .423076987
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: .423076987
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill2
+    m_EventTreshold: 0
+    m_ExitTime: .423076987
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
@@ -986,8 +1440,24 @@ Transition:
   m_TransitionDuration: .62499994
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 5
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2run
+    m_EventTreshold: 0
+    m_ExitTime: .37500006
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .37500006
+  - m_ConditionMode: 2
     m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: .37500006
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill2
+    m_EventTreshold: 0
+    m_ExitTime: .37500006
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill3
     m_EventTreshold: 0
     m_ExitTime: .37500006
   m_Atomic: 1
@@ -1010,6 +1480,18 @@ Transition:
     m_ConditionEvent: 2run
     m_EventTreshold: 0
     m_ExitTime: .5
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: .5
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill2
+    m_EventTreshold: 0
+    m_ExitTime: .5
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill3
+    m_EventTreshold: 0
+    m_ExitTime: .5
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
@@ -1026,7 +1508,7 @@ Transition:
   m_TransitionDuration: 1.5
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 5
+  - m_ConditionMode: 2
     m_ConditionEvent: 2run
     m_EventTreshold: 0
     m_ExitTime: 0
@@ -1046,8 +1528,8 @@ Transition:
   m_TransitionDuration: 1.24999988
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 5
-    m_ConditionEvent: 2skill1
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2run
     m_EventTreshold: 0
     m_ExitTime: 0
   m_Atomic: 1
@@ -1070,6 +1552,22 @@ Transition:
     m_ConditionEvent: 2skill3
     m_EventTreshold: 0
     m_ExitTime: .318181813
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2run
+    m_EventTreshold: 0
+    m_ExitTime: .318181813
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .318181813
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: .318181813
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill2
+    m_EventTreshold: 0
+    m_ExitTime: .318181813
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
@@ -1086,8 +1584,8 @@ Transition:
   m_TransitionDuration: 1.24999988
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 5
-    m_ConditionEvent: 2skill1
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2run
     m_EventTreshold: 0
     m_ExitTime: 0
   m_Atomic: 1
@@ -1130,6 +1628,22 @@ Transition:
     m_ConditionEvent: 2run
     m_EventTreshold: 0
     m_ExitTime: .318181813
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .318181813
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: .318181813
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill2
+    m_EventTreshold: 0
+    m_ExitTime: .318181813
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill3
+    m_EventTreshold: 0
+    m_ExitTime: .318181813
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
@@ -1148,6 +1662,22 @@ Transition:
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: 2run
+    m_EventTreshold: 0
+    m_ExitTime: .8125
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .8125
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: .8125
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill2
+    m_EventTreshold: 0
+    m_ExitTime: .8125
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill3
     m_EventTreshold: 0
     m_ExitTime: .8125
   m_Atomic: 1
@@ -1186,8 +1716,8 @@ Transition:
   m_TransitionDuration: .5
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 5
-    m_ConditionEvent: 2skill1
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2run
     m_EventTreshold: 0
     m_ExitTime: .5
   m_Atomic: 1
@@ -1210,6 +1740,22 @@ Transition:
     m_ConditionEvent: 2skill2
     m_EventTreshold: 0
     m_ExitTime: .318181813
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2run
+    m_EventTreshold: 0
+    m_ExitTime: .318181813
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .318181813
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: .318181813
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill3
+    m_EventTreshold: 0
+    m_ExitTime: .318181813
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
@@ -1228,6 +1774,22 @@ Transition:
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: .423076987
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2run
+    m_EventTreshold: 0
+    m_ExitTime: .423076987
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .423076987
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill2
+    m_EventTreshold: 0
+    m_ExitTime: .423076987
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill3
     m_EventTreshold: 0
     m_ExitTime: .423076987
   m_Atomic: 1
@@ -1250,6 +1812,22 @@ Transition:
     m_ConditionEvent: 2skill3
     m_EventTreshold: 0
     m_ExitTime: .37500006
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2run
+    m_EventTreshold: 0
+    m_ExitTime: .37500006
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .37500006
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: .37500006
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill2
+    m_EventTreshold: 0
+    m_ExitTime: .37500006
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
@@ -1268,6 +1846,26 @@ Transition:
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: 2skill3
+    m_EventTreshold: 0
+    m_ExitTime: .659090877
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2run
+    m_EventTreshold: 0
+    m_ExitTime: .659090877
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: .659090877
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: .659090877
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill2
+    m_EventTreshold: 0
+    m_ExitTime: .659090877
+  - m_ConditionMode: 2
+    m_ConditionEvent: stop
     m_EventTreshold: 0
     m_ExitTime: .659090877
   m_Atomic: 1
@@ -1306,8 +1904,16 @@ Transition:
   m_TransitionDuration: 1.24999988
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 5
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2att
+    m_EventTreshold: 0
+    m_ExitTime: 0
+  - m_ConditionMode: 2
     m_ConditionEvent: 2skill1
+    m_EventTreshold: 0
+    m_ExitTime: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: 2skill3
     m_EventTreshold: 0
     m_ExitTime: 0
   m_Atomic: 1
@@ -1475,7 +2081,7 @@ State:
   m_Motions:
   - {fileID: 7400000, guid: f800d5b6e11776d48a5f5a4aea5a74ae, type: 3}
   m_ParentStateMachine: {fileID: 110700000}
-  m_Position: {x: -684, y: 84, z: 0}
+  m_Position: {x: -696, y: 60, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -1599,10 +2205,31 @@ StateMachine:
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110287227}
+      first: {fileID: 0}
       second:
-      - {fileID: 110116274}
-      - {fileID: 110183108}
+      - {fileID: 110186756}
+    data:
+      first: {fileID: 110200000}
+      second:
+      - {fileID: 110104033}
+      - {fileID: 110114765}
+      - {fileID: 110136373}
+      - {fileID: 110156908}
+      - {fileID: 110197398}
+    data:
+      first: {fileID: 110215726}
+      second:
+      - {fileID: 110181598}
+      - {fileID: 110127324}
+    data:
+      first: {fileID: 110226677}
+      second:
+      - {fileID: 110160949}
+      - {fileID: 110177831}
+      - {fileID: 110131157}
+      - {fileID: 110156379}
+      - {fileID: 110148787}
+      - {fileID: 110196974}
     data:
       first: {fileID: 110228513}
       second:
@@ -1611,46 +2238,32 @@ StateMachine:
       - {fileID: 110133690}
       - {fileID: 110153119}
     data:
-      first: {fileID: 110275474}
+      first: {fileID: 110249487}
       second:
-      - {fileID: 110159608}
-      - {fileID: 110189315}
+      - {fileID: 110121922}
+      - {fileID: 110131924}
     data:
-      first: {fileID: 110294553}
+      first: {fileID: 110255600}
       second:
-      - {fileID: 110199337}
-      - {fileID: 110112108}
-      - {fileID: 110103360}
-      - {fileID: 110175994}
+      - {fileID: 110179600}
+      - {fileID: 110163754}
+      - {fileID: 110153278}
+      - {fileID: 110101815}
+      - {fileID: 110162863}
+    data:
+      first: {fileID: 110258657}
+      second:
+      - {fileID: 110112560}
+      - {fileID: 110167401}
+      - {fileID: 110177634}
+      - {fileID: 110195812}
+      - {fileID: 110131396}
+      - {fileID: 110177659}
     data:
       first: {fileID: 110267912}
       second:
       - {fileID: 110185463}
       - {fileID: 110198670}
-    data:
-      first: {fileID: 110279847}
-      second:
-      - {fileID: 110128375}
-      - {fileID: 110131022}
-      - {fileID: 110123076}
-      - {fileID: 110126584}
-    data:
-      first: {fileID: 110249487}
-      second:
-      - {fileID: 110131924}
-      - {fileID: 110121922}
-    data:
-      first: {fileID: 110255600}
-      second:
-      - {fileID: 110163754}
-      - {fileID: 110153278}
-      - {fileID: 110101815}
-      - {fileID: 110162863}
-      - {fileID: 110179600}
-    data:
-      first: {fileID: 0}
-      second:
-      - {fileID: 110186756}
     data:
       first: {fileID: 110269588}
       second:
@@ -1660,63 +2273,53 @@ StateMachine:
       - {fileID: 110121363}
       - {fileID: 110116527}
     data:
-      first: {fileID: 110200000}
+      first: {fileID: 110275474}
       second:
-      - {fileID: 110104033}
-      - {fileID: 110136373}
-      - {fileID: 110156908}
-      - {fileID: 110197398}
-      - {fileID: 110114765}
+      - {fileID: 110189315}
+      - {fileID: 110159608}
     data:
-      first: {fileID: 110293321}
+      first: {fileID: 110279847}
       second:
-      - {fileID: 110100000}
-      - {fileID: 110143506}
-      - {fileID: 110164459}
-      - {fileID: 110189380}
-      - {fileID: 110183277}
-      - {fileID: 110187553}
+      - {fileID: 110128375}
+      - {fileID: 110123076}
+      - {fileID: 110131022}
+      - {fileID: 110126584}
     data:
-      first: {fileID: 110226677}
+      first: {fileID: 110282939}
       second:
-      - {fileID: 110177831}
-      - {fileID: 110131157}
-      - {fileID: 110156379}
-      - {fileID: 110148787}
-      - {fileID: 110196974}
-      - {fileID: 110160949}
+      - {fileID: 110125461}
+      - {fileID: 110189243}
     data:
-      first: {fileID: 110258657}
+      first: {fileID: 110287227}
       second:
-      - {fileID: 110167401}
-      - {fileID: 110177634}
-      - {fileID: 110195812}
-      - {fileID: 110131396}
-      - {fileID: 110177659}
-      - {fileID: 110112560}
-    data:
-      first: {fileID: 0}
-      second: []
-    data:
-      first: {fileID: 110296956}
-      second:
-      - {fileID: 110102874}
-      - {fileID: 110103623}
-    data:
-      first: {fileID: 110215726}
-      second:
-      - {fileID: 110181598}
-      - {fileID: 110127324}
+      - {fileID: 110183108}
+      - {fileID: 110116274}
     data:
       first: {fileID: 110289196}
       second:
       - {fileID: 110108926}
       - {fileID: 110175624}
     data:
-      first: {fileID: 110282939}
+      first: {fileID: 110293321}
       second:
-      - {fileID: 110125461}
-      - {fileID: 110189243}
+      - {fileID: 110187553}
+      - {fileID: 110100000}
+      - {fileID: 110143506}
+      - {fileID: 110164459}
+      - {fileID: 110189380}
+      - {fileID: 110183277}
+    data:
+      first: {fileID: 110294553}
+      second:
+      - {fileID: 110199337}
+      - {fileID: 110103360}
+      - {fileID: 110175994}
+      - {fileID: 110112108}
+    data:
+      first: {fileID: 110296956}
+      second:
+      - {fileID: 110102874}
+      - {fileID: 110103623}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: -228, y: -24, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
