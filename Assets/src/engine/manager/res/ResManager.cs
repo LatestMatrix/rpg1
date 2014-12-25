@@ -36,9 +36,9 @@ namespace engine.manager
             NGUITools.AddChild(NGUITools.FindCameraForLayer((obj).layer).gameObject, obj);
         }
 
-        public Object Load(string name, LoadType t = LoadType.RESOURCE)
+        public GameObject Load(string name)
         {
-            return null;
+            return Resources.Load<GameObject>(name);
         }
 
     }

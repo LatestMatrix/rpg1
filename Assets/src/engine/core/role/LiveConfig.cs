@@ -5,7 +5,7 @@ using System.Text;
 
 namespace engine.core.role
 {
-    public class Monster : Live
+    public struct LiveConfig
     {
     }
 }

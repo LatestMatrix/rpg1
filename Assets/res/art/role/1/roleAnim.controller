@@ -44,6 +44,12 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
+  - m_Name: skill2Time
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 3
     m_Name: Base Layer
@@ -156,6 +162,10 @@ Transition:
   m_TransitionDuration: 1.24999988
   m_TransitionOffset: 0
   m_Conditions:
+  - m_ConditionMode: 3
+    m_ConditionEvent: skill2Time
+    m_EventTreshold: 1
+    m_ExitTime: 0
   - m_ConditionMode: 1
     m_ConditionEvent: 2att
     m_EventTreshold: 0
@@ -292,6 +302,10 @@ Transition:
   m_TransitionDuration: 1.24999988
   m_TransitionOffset: 0
   m_Conditions:
+  - m_ConditionMode: 3
+    m_ConditionEvent: skill2Time
+    m_EventTreshold: 1
+    m_ExitTime: 0
   - m_ConditionMode: 1
     m_ConditionEvent: 2skill3
     m_EventTreshold: 0
@@ -1340,6 +1354,10 @@ Transition:
   m_TransitionDuration: 1.24999988
   m_TransitionOffset: 0
   m_Conditions:
+  - m_ConditionMode: 3
+    m_ConditionEvent: skill2Time
+    m_EventTreshold: 1
+    m_ExitTime: 0
   - m_ConditionMode: 1
     m_ConditionEvent: 2skill1
     m_EventTreshold: 0
@@ -1904,6 +1922,10 @@ Transition:
   m_TransitionDuration: 1.24999988
   m_TransitionOffset: 0
   m_Conditions:
+  - m_ConditionMode: 3
+    m_ConditionEvent: skill2Time
+    m_EventTreshold: 1
+    m_ExitTime: 0
   - m_ConditionMode: 2
     m_ConditionEvent: 2att
     m_EventTreshold: 0
@@ -1976,7 +1998,7 @@ State:
   m_Motions:
   - {fileID: 7400000, guid: fde5b46911fb59341941a1163c534dd5, type: 3}
   m_ParentStateMachine: {fileID: 110700000}
-  m_Position: {x: -684, y: 396, z: 0}
+  m_Position: {x: -696, y: 396, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 

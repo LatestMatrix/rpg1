@@ -21,6 +21,8 @@ public class Main : MonoBehaviour
         _mac = new MainCtrl();
 
         _km = new KeyManager();
+
+        LEngine.sm.initScene();
     }
 
     // Update is called once per frame

@@ -2,40 +2,51 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using UnityEditorInternal;
 using UnityEngine;
 
-namespace engine.core
+namespace engine.core.anim
 {
     public class Skeleton
     {
         private Animator _anim;
-        private Dictionary<STriggerType, int> _triggers;
         private List<int>[] _triChanges;
         private bool _tcp = false;
         private Dictionary<int, string> _nameMap;
 
-        public Skeleton(Animator anim)
+        public Skeleton(Animator anim, AnimConfig config)
         {
             _anim = anim;
-            _triggers = new Dictionary<STriggerType, int>();
             _triChanges = new List<int>[2];
             _triChanges[0] = new List<int>();
             _triChanges[1] = new List<int>();
-            InitHashName();
+            _nameMap = new Dictionary<int, string>();
+
+            InitHashName(config.animList);
+            InitBoolTrigger(config.boolList);
+            InitBoolTrigger(config.floatList);
         }
 
-        private void InitHashName()
+        private void InitHashName(string[] nameList)
         {
-            AnimatorController ctrl = _anim.runtimeAnimatorController as AnimatorController;
-            AnimatorControllerLayer layer = ctrl.GetLayer(0);
-            StateMachine stateMachine = layer.stateMachine;
-            _nameMap = new Dictionary<int, string>();
-            
-            for (int i = 0; i < stateMachine.stateCount; i++)
+            foreach (string an in nameList)
             {
-                string name = stateMachine.GetState(i).name;
-                _nameMap.Add(Animator.StringToHash(layer.name + "." + name), name);
+                _nameMap.Add(Animator.StringToHash("Base Layer." + an), an);
+            }
+        }
+
+        private void InitBoolTrigger(string[] nameList)
+        {
+            foreach (string an in nameList)
+            {
+                _nameMap.Add(Animator.StringToHash(an), an);
+            }
+        }
+
+        private void InitFloatTrigger(string[] nameList)
+        {
+            foreach (string an in nameList)
+            {
+                _nameMap.Add(Animator.StringToHash(an), an);
             }
         }
 
@@ -49,37 +60,53 @@ namespace engine.core
             return null;
         }
 
-        public void AddTrigger(STriggerType t, string trigger)
+        public string NextAnim()
         {
-            if (_triggers.ContainsKey(t))
+            AnimatorStateInfo info = _anim.GetNextAnimatorStateInfo(0);
+            if (_nameMap.ContainsKey(info.nameHash))
             {
-                _triggers[t] = Animator.StringToHash(trigger);
+                return _nameMap[info.nameHash];
             }
-            else
-            {
-                _triggers.Add(t, Animator.StringToHash(trigger));
-            }
+            return null;
         }
 
-        public void RemoveTrigger(STriggerType t)
+        public bool IsInTrans()
         {
-            if (_triggers.ContainsKey(t))
-            {
-                _triggers.Remove(t);
-            }
+            return _anim.IsInTransition(0);
         }
 
-        public bool ActionTo(STriggerType t)
+        public bool BoolActionTo(string name)
         {
-            if (_triggers.ContainsKey(t))
+            if (_nameMap.ContainsValue(name))
             {
-                int tri = _triggers[t];
+                int tri = Animator.StringToHash(name);
                 if (!_triChanges[_tcp ? 1 : 0].Contains(tri))
                 {
                     _anim.SetBool(tri, true);
                     _triChanges[_tcp ? 1 : 0].Add(tri);
                     return true;
                 }
+            }
+            return false;
+        }
+
+        public bool FloatActionTo(string name, float add)
+        {
+            if (_nameMap.ContainsValue(name))
+            {
+                int tri = Animator.StringToHash(name);
+                _anim.SetFloat(tri, _anim.GetFloat(tri) + add);
+                return true;
+            }
+            return false;
+        }
+
+        public bool FloatActionReset(string name, float value = 0)
+        {
+            if (_nameMap.ContainsValue(name))
+            {
+                _anim.SetFloat(name, value);
+                return true;
             }
             return false;
         }
