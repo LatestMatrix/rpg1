@@ -4,3 +4,12 @@
 *.csproj
 *.sln
 *.suo
+Assets/Editor/*.meta
+Assets/Editor/*/*.meta
+Assets/Editor/*/*/*.meta
+Assets/src/*.meta
+Assets/src/*/*.meta
+Assets/src/*/*/*.meta
+Assets/src/*/*/*/*.meta
+Assets/src/*/*/*/*/*.meta
+Assets/src/*/*/*/*/*/*.meta
