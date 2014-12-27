@@ -8,15 +8,28 @@ public delegate void CallBackFun();
 public delegate void CallBackRemoveFun(TimeItem item);
 public class Timer
 {
-    private static List<TimeItem> _items = null;
-    public static int AddTimer(CallBackFun fun, float intervalTime, int time)
+    public static int MAX_IDLE = 20;
+
+    private static List<TimeItem> _items = new List<TimeItem>();
+    private static List<TimeItem> _idles = new List<TimeItem>();
+
+    public static int AddTimer(CallBackFun fun, float intervalTime, int time = 1)
     {
         TimeItem item = GetTimer(fun);
         if (item != null)
         {
             RemoveTimer(item);
         }
-        item = TimeItem.Init(fun, RemoveTimer, intervalTime, time);
+        if (_idles.Count > 0)
+        {
+            item = _idles[0];
+            _idles.RemoveAt(0);
+            item.Reset(fun, RemoveTimer, intervalTime, time);
+        }
+        else
+        {
+            item = TimeItem.Init(fun, RemoveTimer, intervalTime, time);
+        }
         _items.Add(item);
         return item.id;
     }
@@ -31,6 +44,10 @@ public class Timer
             {
                 _items.RemoveAt(i);
                 item.Cancel();
+                if (_idles.Count < MAX_IDLE)
+                {
+                    //_idles.Add(item);
+                }
                 return true;
             }
         }
@@ -42,6 +59,10 @@ public class Timer
         if(_items.Remove(item))
         {
             item.Cancel();
+            if (_idles.Count < MAX_IDLE)
+            {
+                //_idles.Add(item);
+            }
         }
     }
 

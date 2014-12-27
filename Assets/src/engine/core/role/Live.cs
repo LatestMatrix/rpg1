@@ -8,19 +8,12 @@ namespace engine.core.role
 {
     public class Live : Dummy, IMove, IAI
     {
-        public Skeleton s;
+        public IAnim ia;
 
         public Live()
         {
 
         }
 
-        void Update()
-        {
-            if(s != null)
-            {
-                s.OnUpdate();
-            }
-        }
     }
 }

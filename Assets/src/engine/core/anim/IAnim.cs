@@ -5,10 +5,9 @@ using System.Text;
 
 namespace engine.core.anim
 {
-    public struct AnimConfig
+    public interface IAnim
     {
-        public string[] animList;
-        public string[] boolList;
-        public string[] floatList;
+        void Run(LState s, float fadeTime = 0);
+        void SetSwitch(string name, object value);
     }
 }

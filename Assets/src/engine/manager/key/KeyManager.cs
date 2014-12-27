@@ -57,7 +57,7 @@ namespace engine.manager
             if (state)
             {
                 Log.Trace("!!!");
-                LEngine.sm.mainPlayerScript.s.BoolActionTo("2att");
+                LEngine.sm.mainPlayerScript.ia.SetSwitch("2att", true);
             }
         }
 
@@ -66,7 +66,7 @@ namespace engine.manager
             if(state)
             {
                 Log.Trace("222");
-                LEngine.sm.mainPlayerScript.s.BoolActionTo("2skill1");
+                LEngine.sm.mainPlayerScript.ia.SetSwitch("2skill1", true);
             }
         }
 
@@ -75,7 +75,7 @@ namespace engine.manager
             if (state)
             {
                 Log.Trace("333");
-                LEngine.sm.mainPlayerScript.s.BoolActionTo("2skill2");
+                LEngine.sm.mainPlayerScript.ia.SetSwitch("2skill2", true);
             }
         }
 
@@ -84,7 +84,7 @@ namespace engine.manager
             if (state)
             {
                 Log.Trace("444");
-                LEngine.sm.mainPlayerScript.s.BoolActionTo("2skill3");
+                LEngine.sm.mainPlayerScript.ia.SetSwitch("2skill3", true);
             }
         }
 
@@ -97,7 +97,7 @@ namespace engine.manager
                 {
                     _passTime -= _repetTime;
                     Log.Trace("!!!");
-                    LEngine.sm.mainPlayerScript.s.BoolActionTo("2att");
+                    LEngine.sm.mainPlayerScript.ia.SetSwitch("2att", true);
                 }
             }
         }
