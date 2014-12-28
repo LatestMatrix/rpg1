@@ -7,5 +7,6 @@ namespace engine.core.effect
 {
     public class Trajectory : Effect, IMove
     {
+
     }
 }

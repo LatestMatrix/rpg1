@@ -38,6 +38,31 @@ public class Tools
         }
     }
 
+    static public GameObject AddBinding(GameObject prefab, GameObject parent, string binding)
+    {
+        GameObject go = GameObject.Instantiate(prefab) as GameObject;
+#if UNITY_EDITOR
+        UnityEditor.Undo.RegisterCreatedObjectUndo(go, "Create Object");
+#endif
+        if (go != null && parent != null)
+        {
+            Transform[] transform = parent.GetComponentsInChildren<Transform>();
+            foreach (Transform tf in transform)
+            {
+                if (tf.name == binding)
+                {
+                    Transform t = go.transform;
+                    t.parent = tf;
+                    t.localPosition = Vector3.zero;
+                    t.localRotation = Quaternion.identity;
+                    t.localScale = Vector3.one;
+                    go.layer = parent.layer;
+                }
+            }
+        }
+        return go;
+    }
+
     static public GameObject GetParent(GameObject go)
     {
         Transform t = go.transform;
@@ -98,7 +123,7 @@ public class Tools
         }
         catch (System.Exception ex)
         {
-            Debug.LogError(ex.Message);
+            Log.Error(ex.Message);
             return false;
         }
 

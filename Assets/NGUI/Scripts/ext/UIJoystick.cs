@@ -74,9 +74,16 @@ public class UIJoystick : MonoBehaviour
         if (passTime > updateFrame)
         {
             passTime -= updateFrame;
-            if(local_pos.sqrMagnitude > 0 && dragMove != null)
+            if (dragMove != null)
             {
-                dragMove(local_pos.normalized);
+                if (local_pos.sqrMagnitude > 0)
+                {
+                    dragMove(local_pos.normalized);
+                }
+                else
+                {
+                    dragMove(Vector2.zero);
+                }
             }
         }
     }

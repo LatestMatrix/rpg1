@@ -6,10 +6,11 @@ using UnityEngine;
 
 namespace engine.manager
 {
+
     public class KeyManager
     {
         private bool _btn1State = false;
-        private float _repetTime = 0.5f;
+        private float _repetTime = 0.3f;
         private float _passTime = 0f;
         public KeyManager()
         {
@@ -32,7 +33,14 @@ namespace engine.manager
 
         private void DragMove(Vector2 dir)
         {
-            LEngine.em.DispatchEvent(new LEvent(LEventType.MainEvent, dir));
+            if (dir == Vector2.zero)
+            {
+                LEngine.em.DispatchEvent(new LEvent(LEventType.KeyEvent));
+            }
+            else
+            {
+                LEngine.em.DispatchEvent(new LEvent(LEventType.KeyEvent, dir));
+            }
         }
 
         private void InitSkill()
@@ -56,8 +64,9 @@ namespace engine.manager
             _btn1State = state;
             if (state)
             {
-                Log.Trace("!!!");
-                LEngine.sm.mainPlayerScript.ia.SetSwitch("2att", true);
+                _passTime = 0;
+                LEngine.em.DispatchEvent(new LEvent(LEventType.KeyEvent, "2att"));
+                //LEngine.sm.mainPlayerScript.ia.SetSwitch("2att", true);
             }
         }
 
@@ -65,8 +74,8 @@ namespace engine.manager
         {
             if(state)
             {
-                Log.Trace("222");
-                LEngine.sm.mainPlayerScript.ia.SetSwitch("2skill1", true);
+                //LEngine.sm.mainPlayerScript.ia.SetSwitch("2skill1", true);
+                LEngine.em.DispatchEvent(new LEvent(LEventType.KeyEvent, "2skill1"));
             }
         }
 
@@ -74,8 +83,8 @@ namespace engine.manager
         {
             if (state)
             {
-                Log.Trace("333");
-                LEngine.sm.mainPlayerScript.ia.SetSwitch("2skill2", true);
+                //LEngine.sm.mainPlayerScript.ia.SetSwitch("2skill2", true);
+                LEngine.em.DispatchEvent(new LEvent(LEventType.KeyEvent, "2skill2"));
             }
         }
 
@@ -83,8 +92,8 @@ namespace engine.manager
         {
             if (state)
             {
-                Log.Trace("444");
-                LEngine.sm.mainPlayerScript.ia.SetSwitch("2skill3", true);
+                //LEngine.sm.mainPlayerScript.ia.SetSwitch("2skill3", true);
+                LEngine.em.DispatchEvent(new LEvent(LEventType.KeyEvent, "2skill3"));
             }
         }
 
@@ -96,8 +105,8 @@ namespace engine.manager
                 if (_passTime > _repetTime)
                 {
                     _passTime -= _repetTime;
-                    Log.Trace("!!!");
-                    LEngine.sm.mainPlayerScript.ia.SetSwitch("2att", true);
+                    //LEngine.sm.mainPlayerScript.ia.SetSwitch("2att", true);
+                    LEngine.em.DispatchEvent(new LEvent(LEventType.KeyEvent, "2att"));
                 }
             }
         }

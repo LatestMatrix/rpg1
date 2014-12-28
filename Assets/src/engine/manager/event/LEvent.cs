@@ -5,7 +5,10 @@ namespace engine.manager
 {
     public enum LEventType
     {
-        MainEvent,//主角事件
+        KeyEvent,//操作事件
+        SetMainPlayer,//设置主角
+        AddMoveItem,//添加可移动对象
+        RemoveMoveItem,//移除可移动对象
     }
 
     public class LEvent

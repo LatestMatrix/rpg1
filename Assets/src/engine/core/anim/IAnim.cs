@@ -9,5 +9,7 @@ namespace engine.core.anim
     {
         void Run(LState s, float fadeTime = 0);
         void SetSwitch(string name, object value);
+        string GetAnimName();
+        bool CanMove();
     }
 }

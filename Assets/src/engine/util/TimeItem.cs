@@ -15,7 +15,7 @@ public class TimeItem : MonoBehaviour
     public int id;
     public int total;
     public int cur;
-
+    public bool isStop = true;
 
     public static TimeItem Init(CallBackFun fun, CallBackRemoveFun rf, float intervalTime, int time)
     {
@@ -29,8 +29,8 @@ public class TimeItem : MonoBehaviour
         ins.removeFun = rf;
         ins.total = time;
         ins.cur = 0;
-
         ins.InvokeRepeating("back", intervalTime, intervalTime);
+        ins.isStop = false;
         return ins;
     }
 
@@ -41,8 +41,8 @@ public class TimeItem : MonoBehaviour
         removeFun = rf;
         total = time;
         cur = 0;
-
         InvokeRepeating("back", intervalTime, intervalTime);
+        isStop = false;
     }
 
     public void back()
@@ -51,8 +51,6 @@ public class TimeItem : MonoBehaviour
         if (cur >= total)
         {
             Cancel();
-            fun();
-            removeFun(this);
         }
         else
         {
@@ -62,7 +60,20 @@ public class TimeItem : MonoBehaviour
 
     public void Cancel()
     {
-        CancelInvoke("back");
+        if (!isStop)
+        {
+            isStop = true;
+            fun();
+            removeFun(this);
+            CancelInvoke("back");
+        }
     }
+
+    public void Dispose()
+    {
+        //Log.Trace("invoke d");
+        Destroy(this);
+    }
+
 }
 

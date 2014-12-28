@@ -8,7 +8,7 @@ public delegate void CallBackFun();
 public delegate void CallBackRemoveFun(TimeItem item);
 public class Timer
 {
-    public static int MAX_IDLE = 20;
+    public static int MAX_IDLE = 10;
 
     private static List<TimeItem> _items = new List<TimeItem>();
     private static List<TimeItem> _idles = new List<TimeItem>();
@@ -46,7 +46,11 @@ public class Timer
                 item.Cancel();
                 if (_idles.Count < MAX_IDLE)
                 {
-                    //_idles.Add(item);
+                    _idles.Add(item);
+                }
+                else
+                {
+                    item.Dispose();
                 }
                 return true;
             }
@@ -61,7 +65,11 @@ public class Timer
             item.Cancel();
             if (_idles.Count < MAX_IDLE)
             {
-                //_idles.Add(item);
+                _idles.Add(item);
+            }
+            else
+            {
+                item.Dispose();
             }
         }
     }

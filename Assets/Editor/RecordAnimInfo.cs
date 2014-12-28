@@ -104,7 +104,7 @@ public class RecordAnimInfo : EditorWindow
                     for(int i = 0; i < count; i++)
                     {
                         AnimatorControllerParameter acp = ac.GetParameter(i);
-                        Debug.Log(acp.name + "," + acp.type);
+                        //Debug.Log(acp.name + "," + acp.type);
                     }
                 }
             }

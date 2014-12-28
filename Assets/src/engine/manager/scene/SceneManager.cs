@@ -1,4 +1,5 @@
-﻿using engine.core.anim;
+﻿using engine.core;
+using engine.core.anim;
 using engine.core.role;
 using System;
 using System.Collections.Generic;
@@ -10,13 +11,16 @@ namespace engine.manager
 {
     public class SceneManager
     {
-        private GameObject _player;
-        private GameObject _monster;
-        private GameObject _npc;
-        private GameObject _scene;
+        private GameObject _player = null;
+        private GameObject _monster = null;
+        private GameObject _npc = null;
+        private GameObject _scene = null;
 
-        public GameObject mainPlayer;
-        public Player mainPlayerScript;
+        public GameObject mainPlayer = null;
+        public Player mainPlayerScript = null;
+
+        public GameObject mainCamera = null;
+        public SCamera mainCameraScript = null;
 
         public SceneManager()
         {
@@ -28,19 +32,29 @@ namespace engine.manager
             
         }
 
-        public void initScene()
+        public void InitScene()
         {
             _player = GameObject.Find("Player");
             _monster = GameObject.Find("Monster");
             _npc = GameObject.Find("Npc");
             _scene = GameObject.Find("Scene");
-            //初始化场景
             //初始化主角
             mainPlayer = Tools.Instance(LEngine.rm.Load("role/1/role1"), _player);
             mainPlayer.name = "MainRole";
             mainPlayerScript = mainPlayer.AddComponent<Player>();
             Animator anim = mainPlayer.GetComponent<Animator>();
             mainPlayerScript.ia = new MainAnimCtrl(anim);
+            LEngine.em.DispatchEvent(new LEvent(LEventType.SetMainPlayer, mainPlayerScript));
+            LEngine.em.DispatchEvent(new LEvent(LEventType.AddMoveItem, mainPlayerScript));
+            NavMeshAgent na = mainPlayer.AddComponent<NavMeshAgent>();
+            //绑武器
+            Tools.AddBinding(LEngine.rm.Load("role/1/weapon1"), mainPlayer, "Bip001 Weapons");
+            //初始化摄像机
+            mainCamera = GameObject.Find("Main Camera");
+            mainCameraScript = mainCamera.AddComponent<SCamera>();
+            mainCameraScript.SetTarget(mainPlayer.transform);
+            //初始化场景
+            Application.LoadLevel("scene2");
         }
 
     }

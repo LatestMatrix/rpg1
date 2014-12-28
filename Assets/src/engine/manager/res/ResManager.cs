@@ -10,7 +10,7 @@ namespace engine.manager
 
         public ResManager()
         {
-            LoadConfigFile();
+            //LoadConfigFile();
             LoadUI();
         }
 

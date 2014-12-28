@@ -7,5 +7,9 @@ namespace engine.core.effect
 {
     public class Effect : Dummy, IMove
     {
+
+        public void MoveStep(float dTime)
+        {
+        }
     }
 }

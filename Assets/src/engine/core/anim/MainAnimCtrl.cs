@@ -18,7 +18,7 @@ namespace engine.core.anim
         override protected void InitState()
         {
             LState stand = new LState(this, "stand", 40, true);
-            LState run = new LState(this, "run", 22, true);
+            LState run = new LState(this, "run", 22, true, true);
             LState att1 = new LState(this, "att1", 11);
             LState att11 = new LState(this, "att11", 5);
             LState att2 = new LState(this, "att2", 12);
@@ -172,7 +172,7 @@ namespace engine.core.anim
             _switch.Add("2skill2", new BoolSwitch());
             _switch.Add("2skill3", new BoolSwitch());
             _switch.Add("stop", new BoolSwitch());
-            _switch.Add("stopSkill2", new IntSwitch());
+            _switch.Add("stopSkill2", new IntSwitch(true));
         }
 
     }

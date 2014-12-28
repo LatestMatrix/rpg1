@@ -7,5 +7,6 @@ namespace engine.core
 {
     interface IMove
     {
+        void MoveStep(float dTime);
     }
 }

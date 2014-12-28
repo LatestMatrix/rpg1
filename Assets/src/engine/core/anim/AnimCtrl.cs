@@ -25,6 +25,24 @@ namespace engine.core.anim
             InitState();
         }
 
+        public bool CanMove()
+        {
+            if (_cur != null)
+            {
+                return _cur.canMove;
+            }
+            return false;
+        }
+
+        public string GetAnimName()
+        {
+            if (_cur != null)
+            {
+                return _cur.animName;
+            }
+            return null;
+        }
+
         public void Run(LState s, float fadeTime)
         {
             if (_cur != null)
@@ -33,14 +51,17 @@ namespace engine.core.anim
             }
             if (_cur == s)
             {
+                //Log.Trace("1" + s.animName);
                 _anim.Play(s.hashName, 0, 0);
             }
             else if (fadeTime > 0)
             {
-                _anim.CrossFade(s.hashName, fadeTime);
+                //Log.Trace("2" + s.animName);
+                _anim.CrossFade(s.hashName, fadeTime, 0, 0);
             }
             else
             {
+                //Log.Trace("3" + s.animName);
                 _anim.Play(s.hashName);
             }
             ResetAllSwitch();
@@ -52,6 +73,10 @@ namespace engine.core.anim
             if (_switch.ContainsKey(name))
             {
                 _switch[name].Set(value);
+                if(_cur != null)
+                {
+                    _cur.OnImmediately();
+                }
             }
         }
 

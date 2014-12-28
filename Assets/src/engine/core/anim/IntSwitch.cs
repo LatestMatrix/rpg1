@@ -8,9 +8,19 @@ namespace engine.core.anim
     public class IntSwitch : ISwitch
     {
         public int data = 0;
+        public bool isLoop = false;
+
+        public IntSwitch(bool l = false)
+        {
+            isLoop = l;
+        }
 
         public bool Match(LSwitchCondition c)
         {
+            if (isLoop)
+            {
+                data++;
+            }
             switch (c.c)
             {
                 case Condition.EQUAL:

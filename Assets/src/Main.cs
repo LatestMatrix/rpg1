@@ -12,6 +12,7 @@ public class Main : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        DontDestroyOnLoad(gameObject);
         LEngine.ma = this;
         LEngine.em = new EventManager();
         LEngine.sm = new SceneManager();
@@ -22,7 +23,7 @@ public class Main : MonoBehaviour
 
         _km = new KeyManager();
 
-        LEngine.sm.initScene();
+        LEngine.sm.InitScene();
     }
 
     // Update is called once per frame

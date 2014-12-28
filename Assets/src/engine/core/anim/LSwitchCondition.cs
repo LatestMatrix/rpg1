@@ -18,7 +18,7 @@ namespace engine.core.anim
             target = tar;
         }
 
-        public bool Match()
+        virtual public bool Match()
         {
             return s.Match(this);
         }
