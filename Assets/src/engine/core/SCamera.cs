@@ -22,7 +22,7 @@ namespace engine.core
         {
             DontDestroyOnLoad(gameObject);
             _cam = gameObject.GetComponent<Transform>();
-            rotation = Quaternion.Euler(30, 0, 0);
+            rotation = Quaternion.Euler(45, 0, 0);
             scale = 4;
             LEngine.em.DispatchEvent(new LEvent(LEventType.AddMoveItem, this));
         }
@@ -67,6 +67,7 @@ namespace engine.core
             if(_tar != null)
             {
                 Vector3 t = _tar.position + _vec;
+                t.y += 1;
                 float l = Vector3.Distance(t, _cam.localPosition);
                 if(l > MAX_LEN)
                 {

@@ -26,8 +26,8 @@ namespace engine.core.anim
             LState att3 = new LState(this, "att3", 13);
             LState att31 = new LState(this, "att31", 5);
             LState att4 = new LState(this, "att4", 15);
-            LState att41 = new LState(this, "att41", 6);
-            LState att42 = new LState(this, "att42", 13);
+            LState att41 = new LState(this, "att41", 13);
+            LState att42 = new LState(this, "att42", 6);
             LState skill1 = new LState(this, "skill1", 23);
             LState skill11 = new LState(this, "skill11", 6);
             LState skill2 = new LState(this, "skill2", 6, true, true);
