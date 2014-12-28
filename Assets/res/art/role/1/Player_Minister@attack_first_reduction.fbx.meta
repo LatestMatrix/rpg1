@@ -202,37 +202,37 @@ ModelImporter:
         weight: 1
       - path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Neck/Bip001 R
           Clavicle/Bip001 R UpperArm/Bip001 R Forearm/Bip001 R Hand/Bip001 Weapons
-        weight: 0
+        weight: 1
       - path: Bip001/Bip001 Pelvis/skirt_L 00
-        weight: 0
+        weight: 1
       - path: Bip001/Bip001 Pelvis/skirt_L 00/skirt_L 01
-        weight: 0
+        weight: 1
       - path: Bip001/Bip001 Pelvis/skirt_L 00/skirt_L 01/skirt_L 02
-        weight: 0
+        weight: 1
       - path: Bip001/Bip001 Pelvis/skirt_L 00/skirt_L 01/skirt_L 02/skirt_L 03
-        weight: 0
+        weight: 1
       - path: Bip001/Bip001 Pelvis/skirt_L 00/skirt_L 01/skirt_L 02/skirt_L 03/Bone001
-        weight: 0
+        weight: 1
       - path: Bip001/Bip001 Pelvis/skirt_M 00
-        weight: 0
+        weight: 1
       - path: Bip001/Bip001 Pelvis/skirt_M 00/skirt_M 01
-        weight: 0
+        weight: 1
       - path: Bip001/Bip001 Pelvis/skirt_M 00/skirt_M 01/skirt_M 02
-        weight: 0
+        weight: 1
       - path: Bip001/Bip001 Pelvis/skirt_M 00/skirt_M 01/skirt_M 02/skirt_M 03
-        weight: 0
+        weight: 1
       - path: Bip001/Bip001 Pelvis/skirt_M 00/skirt_M 01/skirt_M 02/skirt_M 03/Bone002
-        weight: 0
+        weight: 1
       - path: Bip001/Bip001 Pelvis/skirt_R 00
-        weight: 0
+        weight: 1
       - path: Bip001/Bip001 Pelvis/skirt_R 00/skirt_R 01
-        weight: 0
+        weight: 1
       - path: Bip001/Bip001 Pelvis/skirt_R 00/skirt_R 01/skirt_R 02
-        weight: 0
+        weight: 1
       - path: Bip001/Bip001 Pelvis/skirt_R 00/skirt_R 01/skirt_R 02/skirt_R 03
-        weight: 0
+        weight: 1
       - path: Bip001/Bip001 Pelvis/skirt_R 00/skirt_R 01/skirt_R 02/skirt_R 03/Bone003
-        weight: 0
+        weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
     isReadable: 1
