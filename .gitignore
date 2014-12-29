@@ -4,6 +4,7 @@
 *.csproj
 *.sln
 *.suo
+*.unityproj
 Assets/Editor/*.meta
 Assets/Editor/*/*.meta
 Assets/Editor/*/*/*.meta
