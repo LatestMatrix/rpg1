@@ -46,7 +46,6 @@ namespace engine.manager
             mainPlayerScript.ia = new MainAnimCtrl(anim);
             LEngine.em.DispatchEvent(new LEvent(LEventType.SetMainPlayer, mainPlayerScript));
             LEngine.em.DispatchEvent(new LEvent(LEventType.AddMoveItem, mainPlayerScript));
-            NavMeshAgent na = mainPlayer.AddComponent<NavMeshAgent>();
             //绑武器
             Tools.AddBinding(LEngine.rm.Load("role/1/weapon1"), mainPlayer, "Bip001 Weapons");
             //初始化摄像机
@@ -55,6 +54,13 @@ namespace engine.manager
             mainCameraScript.SetTarget(mainPlayer.transform);
             //初始化场景
             Application.LoadLevel("scene2");
+            Timer.AddTimer(InitNavAgent, 1);
+            
+        }
+
+        private void InitNavAgent()
+        {
+            NavMeshAgent na = mainPlayer.AddComponent<NavMeshAgent>();
         }
 
     }

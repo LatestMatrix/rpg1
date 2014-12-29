@@ -110,7 +110,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 212656407}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f1c6754e1e5382418d36216d662881d, type: 3}
+  m_Script: {fileID: 11500000, guid: 31731f8f7802a7341bb78454af4b6f24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &645629118
@@ -140,7 +140,7 @@ Transform:
   m_GameObject: {fileID: 645629118}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .00625000009, y: .00625000009, z: .00625000009}
+  m_LocalScale: {x: .00600600615, y: .00600600615, z: .00600600615}
   m_Children:
   - {fileID: 2090648897}
   m_Father: {fileID: 0}
@@ -233,7 +233,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 645629118}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f1c6754e1e5382418d36216d662881d, type: 3}
+  m_Script: {fileID: 11500000, guid: 31731f8f7802a7341bb78454af4b6f24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &674594776
@@ -272,7 +272,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 674594776}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f1c6754e1e5382418d36216d662881d, type: 3}
+  m_Script: {fileID: 11500000, guid: 31731f8f7802a7341bb78454af4b6f24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &677743084
@@ -287,7 +287,6 @@ GameObject:
   - 92: {fileID: 677743087}
   - 124: {fileID: 677743086}
   - 81: {fileID: 677743085}
-  - 114: {fileID: 677743090}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -360,22 +359,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &677743090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 677743084}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53816134a58264bc7994c41c368cc47f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  intensity: 1.10000002
-  threshhold: .360000014
-  blurWidth: 1.79999995
-  extraBlurry: 1
-  bloomMaterial: {fileID: 2100000, guid: 5209417774801496dbc4ad7f143115a1, type: 2}
 --- !u!1 &913894572
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,7 +395,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 913894572}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f1c6754e1e5382418d36216d662881d, type: 3}
+  m_Script: {fileID: 11500000, guid: 31731f8f7802a7341bb78454af4b6f24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1611833435
@@ -587,6 +570,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2115965704}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f1c6754e1e5382418d36216d662881d, type: 3}
+  m_Script: {fileID: 11500000, guid: 31731f8f7802a7341bb78454af4b6f24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

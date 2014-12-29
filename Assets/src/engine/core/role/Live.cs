@@ -34,11 +34,10 @@ namespace engine.core.role
                 else
                 {
                     _trans.forward = direction;
-                    Vector3 step = direction;
-                    step *= (moveSpeed * (dTime - at));
-                    _trans.localPosition += step;
                 }
-                
+                Vector3 step = direction;
+                step *= (moveSpeed * dTime);
+                _trans.localPosition += step;
             }
         }
 
