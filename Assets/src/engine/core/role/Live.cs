@@ -25,6 +25,9 @@ namespace engine.core.role
             }
             if(direction != Vector3.zero)
             {
+                Vector3 step = direction;
+                step *= (moveSpeed * dTime);
+                _trans.localPosition += step;
                 float angle = Vector3.Angle(_trans.forward, direction);
                 float at = angle / angelSpeed;
                 if(at > dTime)
@@ -35,9 +38,6 @@ namespace engine.core.role
                 {
                     _trans.forward = direction;
                 }
-                Vector3 step = direction;
-                step *= (moveSpeed * dTime);
-                _trans.localPosition += step;
             }
         }
 
