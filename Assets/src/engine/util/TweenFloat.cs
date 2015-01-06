@@ -9,7 +9,7 @@ using UnityEngine;
 /// Tween the object's alpha. Works with both UI widgets as well as renderers.
 /// </summary>
 
-[AddComponentMenu("NGUI/Tween/Tween Alpha")]
+[AddComponentMenu("NGUI/Tween/Tween Float")]
 public class TweenFloat : UITweener
 {
 	[Range(0f, 1f)] public float from = 1f;

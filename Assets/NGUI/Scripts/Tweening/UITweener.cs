@@ -27,6 +27,7 @@ public abstract class UITweener : MonoBehaviour
 		EaseInOut,
 		BounceIn,
 		BounceOut,
+        BounceInOut,
 	}
 
 	public enum Style
@@ -330,6 +331,17 @@ public abstract class UITweener : MonoBehaviour
 		{
 			val = 1f - BounceLogic(1f - val);
 		}
+        else if (method == Method.BounceInOut)
+        {
+            if(val < 0.5f)
+            {
+                val = BounceLogic(val);
+            }
+            else
+            {
+                val = 1f - BounceLogic(1f - val);
+            }
+        }
 
 		// Call the virtual update
 		OnUpdate((animationCurve != null) ? animationCurve.Evaluate(val) : val, isFinished);
