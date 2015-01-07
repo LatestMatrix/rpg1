@@ -17,8 +17,7 @@ namespace engine.core
         private float _scale = 1;
         private Vector3 _vec = Vector3.zero;
 
-        public bool isShake = false;
-        private TweenShakePosition _tsp;
+        private TweenShakePosition _tsp = null;
 
         void Start()
         {
@@ -27,7 +26,6 @@ namespace engine.core
             rotation = Quaternion.Euler(45, 0, 0);
             scale = 4;
             LEngine.em.DispatchEvent(new LEvent(LEventType.AddMoveItem, this));
-            _tsp = TweenShakePosition.Begin(gameObject, 0.3f, new Vector3(0, 0.1f, 0));
         }
 
         public void SetTarget(Transform tar)
@@ -77,7 +75,26 @@ namespace engine.core
                     _cam.localPosition = Vector3.Lerp(t, _cam.localPosition, MAX_LEN/l);
                 }
             }
-            _cam.localPosition += _tsp.value;
+            if (_tsp != null)
+            {
+                _cam.localPosition += _tsp.value;
+            }
         }
+
+        public void StartShake(float durationTime = 1f)
+        {
+            Timer.AddTimer(StopShake, durationTime);
+            _tsp = TweenShakePosition.Begin(gameObject, 0.3f, new Vector3(0, 0.1f, 0));
+        }
+
+        public void StopShake()
+        {
+            if(_tsp != null)
+            {
+                _tsp.enabled = false;
+                _tsp = null;
+            }
+        }
+
     }
 }

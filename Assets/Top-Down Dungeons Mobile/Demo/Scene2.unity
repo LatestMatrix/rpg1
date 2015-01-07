@@ -271,15 +271,13 @@ LevelGameManager:
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
-  m_LightProbes: {fileID: 0}
+  m_LightProbes: {fileID: 19700000, guid: c130fac8ad22f04459bc8cb78e7c1d31, type: 2}
   m_Lightmaps:
-  - m_Lightmap: {fileID: 2800000, guid: 2b0743b9f8ff0d9408589ba022019c2b, type: 3}
-    m_IndirectLightmap: {fileID: 2800000, guid: 6ecd510eb7dc87741b791527edc1b5aa,
-      type: 3}
-  - m_Lightmap: {fileID: 2800000, guid: bbdd1bdc7b3aa504f97e3cf12dd5948b, type: 3}
-    m_IndirectLightmap: {fileID: 2800000, guid: 8af5640713039c1489a652dc96251f05,
-      type: 3}
-  m_LightmapsMode: 2
+  - m_Lightmap: {fileID: 2800000, guid: aede20dc8b65b7f49b37f02c09c65bf1, type: 3}
+    m_IndirectLightmap: {fileID: 0}
+  - m_Lightmap: {fileID: 2800000, guid: c9b274948db49bf48bc6c3f0f1d1ee17, type: 3}
+    m_IndirectLightmap: {fileID: 0}
+  m_LightmapsMode: 0
   m_BakedColorSpace: 0
   m_UseDualLightmapsInForward: 1
   m_LightmapEditorSettings:
@@ -292,7 +290,7 @@ LightmapSettings:
     m_SkyLightColor: {r: .860000014, g: .930000007, b: 1, a: 1}
     m_SkyLightIntensity: 0
     m_Quality: 0
-    m_Bounces: 1
+    m_Bounces: 2
     m_FinalGatherRays: 400
     m_FinalGatherContrastThreshold: .0500000007
     m_FinalGatherGradientThreshold: 0
@@ -9281,7 +9279,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 2
+  m_Lightmapping: 1
   m_ShadowSamples: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -10847,7 +10845,7 @@ Light:
   serializedVersion: 3
   m_Type: 2
   m_Color: {r: 1, g: .709007382, b: .388059676, a: 1}
-  m_Intensity: 4
+  m_Intensity: 2
   m_Range: 2
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -11993,7 +11991,7 @@ Light:
   serializedVersion: 3
   m_Type: 2
   m_Color: {r: 1, g: .673207343, b: .24626863, a: 1}
-  m_Intensity: 2.5
+  m_Intensity: 1.5
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -13486,6 +13484,18 @@ Prefab:
     - target: {fileID: 100096, guid: 400008b021d64564383d903e722ab938, type: 2}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 10800004, guid: 400008b021d64564383d903e722ab938, type: 2}
+      propertyPath: m_Intensity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 10800002, guid: 400008b021d64564383d903e722ab938, type: 2}
+      propertyPath: m_Intensity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 10800000, guid: 400008b021d64564383d903e722ab938, type: 2}
+      propertyPath: m_Intensity
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6500002, guid: 400008b021d64564383d903e722ab938, type: 2}
@@ -19907,6 +19917,22 @@ Prefab:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 10800000, guid: ed78c8f1dbb21e2428fd1fc20ef4d2df, type: 2}
+      propertyPath: m_Intensity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 10800002, guid: ed78c8f1dbb21e2428fd1fc20ef4d2df, type: 2}
+      propertyPath: m_Intensity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 10800002, guid: ed78c8f1dbb21e2428fd1fc20ef4d2df, type: 2}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10800000, guid: ed78c8f1dbb21e2428fd1fc20ef4d2df, type: 2}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6500030, guid: ed78c8f1dbb21e2428fd1fc20ef4d2df, type: 2}
     - {fileID: 6500022, guid: ed78c8f1dbb21e2428fd1fc20ef4d2df, type: 2}
@@ -23760,7 +23786,7 @@ Light:
   serializedVersion: 3
   m_Type: 2
   m_Color: {r: .111940324, g: .664648592, b: 1, a: 1}
-  m_Intensity: 5
+  m_Intensity: 2
   m_Range: 8
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -25480,7 +25506,7 @@ Light:
   serializedVersion: 3
   m_Type: 1
   m_Color: {r: 0, g: .496503592, b: 1, a: 1}
-  m_Intensity: 1.29999995
+  m_Intensity: .5
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -28031,6 +28057,10 @@ Prefab:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 10800000, guid: 6600ef118a254cb4dbbba8a74eb59c13, type: 2}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6500000, guid: 6600ef118a254cb4dbbba8a74eb59c13, type: 2}
     - {fileID: 6500018, guid: 6600ef118a254cb4dbbba8a74eb59c13, type: 2}
@@ -28264,7 +28294,7 @@ Light:
   serializedVersion: 3
   m_Type: 2
   m_Color: {r: 1, g: .709007382, b: .388059676, a: 1}
-  m_Intensity: 4
+  m_Intensity: 2
   m_Range: 2
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -28283,7 +28313,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 2
+  m_Lightmapping: 1
   m_ShadowSamples: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -32700,7 +32730,7 @@ Light:
   serializedVersion: 3
   m_Type: 2
   m_Color: {r: 1, g: .673207343, b: .24626863, a: 1}
-  m_Intensity: 2.5
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -35453,7 +35483,7 @@ Light:
   serializedVersion: 3
   m_Type: 2
   m_Color: {r: .24626863, g: .652124107, b: 1, a: 1}
-  m_Intensity: 2.5
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -35544,6 +35574,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1542836230}
+  - 220: {fileID: 1542836231}
   m_Layer: 11
   m_Name: Lights
   m_TagString: Untagged
@@ -35570,6 +35601,99 @@ Transform:
   - {fileID: 1471599148}
   m_Father: {fileID: 2024047696}
   m_RootOrder: 0
+--- !u!220 &1542836231
+LightProbeGroup:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1542836229}
+  m_Enabled: 0
+  m_SourcePositions:
+  - {x: 11.1402349, y: -1.92969918, z: 21.4059391}
+  - {x: -2.78732944, y: .979919672, z: 22.3251057}
+  - {x: 8.41943932, y: .979919672, z: 21.8150253}
+  - {x: 5.04695797, y: .979919672, z: 30.8018169}
+  - {x: 2.3886621, y: .979919672, z: 30.8018169}
+  - {x: .115206003, y: .979919672, z: 22.2865276}
+  - {x: -.127013683, y: -1.88247705, z: 31.6939812}
+  - {x: 8.42696476, y: -1.92969918, z: 21.5007534}
+  - {x: 2.02182984, y: 1.13125014, z: 14.1536064}
+  - {x: 5.41842175, y: .984346151, z: 25.8780289}
+  - {x: 6.22007275, y: -.232230425, z: 27.2641125}
+  - {x: .385507822, y: -1.88247705, z: 21.5264797}
+  - {x: -3.88013005, y: -1.74978089, z: 31.6939812}
+  - {x: -3.88013005, y: -1.88247705, z: 26.1209984}
+  - {x: -3.15644574, y: -1.88247705, z: 21.5264797}
+  - {x: -2.78732944, y: .979919672, z: 30.8018169}
+  - {x: -2.78732944, y: .979919672, z: 26.144659}
+  - {x: -.325683355, y: .979919672, z: 30.8018169}
+  - {x: -.0262448788, y: .979919672, z: 26.2495556}
+  - {x: 8.33706284, y: .979919672, z: 30.8018169}
+  - {x: 11.1402349, y: -1.92969918, z: 29.1569118}
+  - {x: 11.1402349, y: -1.92969918, z: 24.9651089}
+  - {x: 8.42696476, y: -1.92969918, z: 29.1569118}
+  - {x: 8.42696476, y: -1.92969918, z: 24.9454346}
+  - {x: 11.2174034, y: .979919672, z: 30.8018169}
+  - {x: 8.61424446, y: .979919672, z: 25.1160622}
+  - {x: 11.2174034, y: .979919672, z: 25.1160622}
+  - {x: 11.2174034, y: .979919672, z: 21.8150253}
+  - {x: 1.99078965, y: -1.92969918, z: 29.1569118}
+  - {x: 6.01379395, y: -.695327997, z: 23.6840439}
+  - {x: 1.99078965, y: -1.92969918, z: 25.8780289}
+  - {x: 5.41842175, y: -1.92969918, z: 25.8780289}
+  - {x: 1.99078965, y: .778733969, z: 25.8780289}
+  - {x: 1.99078965, y: .778733969, z: 28.619545}
+  - {x: 5.11120129, y: .778733969, z: 28.619545}
+  - {x: 3.81753445, y: .51328826, z: 30.3239574}
+  - {x: 3.81753445, y: .51328826, z: 27.7397652}
+  - {x: 3.81753445, y: .51328826, z: 25.9024334}
+  - {x: 3.81753445, y: .51328826, z: 24.1381302}
+  - {x: 5.44948483, y: -1.92969918, z: 29.1569118}
+  - {x: 3.68594933, y: -1.92969918, z: 29.1569118}
+  - {x: 3.68594933, y: -1.92969918, z: 26.768856}
+  - {x: 3.68594933, y: -1.92969918, z: 24.625124}
+  - {x: 3.68594933, y: -1.92969918, z: 21.8767147}
+  - {x: 1.78218651, y: .634499311, z: 7.36252022}
+  - {x: 6.68634939, y: .408891439, z: 13.48806}
+  - {x: 5.96654415, y: 1.13125014, z: 18.6043129}
+  - {x: 1.69257355, y: 1.13125014, z: 18.6043129}
+  - {x: 1.78218651, y: -1.99123597, z: 18.6043129}
+  - {x: 6.2743907, y: -1.92969918, z: 18.6043129}
+  - {x: 4.09914398, y: -.701847315, z: 19.7345886}
+  - {x: 6.47169399, y: .709547758, z: 7.20240021}
+  - {x: 6.68634939, y: -1.73791242, z: 13.48806}
+  - {x: 1.78218651, y: -1.99123597, z: 13.3195286}
+  - {x: 1.78218651, y: .707460165, z: 4.98126793}
+  - {x: 1.78218651, y: -1.51038575, z: 7.36252022}
+  - {x: 6.06771374, y: -1.51038575, z: 7.63122702}
+  - {x: 1.78218651, y: .91621089, z: -10.1286201}
+  - {x: 4.0560503, y: .0329530239, z: -7.99708796}
+  - {x: 5.9438386, y: .4863832, z: -9.40215683}
+  - {x: 6.26068783, y: .793895006, z: 4.98126793}
+  - {x: 1.78218651, y: -1.51038575, z: 4.98126793}
+  - {x: 5.9438386, y: -1.51038575, z: 4.98126793}
+  - {x: 5.9438386, y: -1.51038575, z: -10.3073311}
+  - {x: 1.78218651, y: -1.51038575, z: -10.6022415}
+  - {x: 4.0560503, y: .0329530239, z: 5.98227501}
+  - {x: 1.78218651, y: -1.51038575, z: .882452011}
+  - {x: 1.78218651, y: .91621089, z: .882452011}
+  - {x: 5.9438386, y: -1.51038575, z: 1.6395092}
+  - {x: 5.9438386, y: .4863832, z: 1.6395092}
+  - {x: 1.78218651, y: .91621089, z: -2.61754656}
+  - {x: 1.78218651, y: -1.51038575, z: -2.87094641}
+  - {x: 5.9438386, y: .4863832, z: -2.60415316}
+  - {x: 5.9438386, y: -1.51038575, z: -2.51998615}
+  - {x: 4.0560503, y: .0329530239, z: 2.7331543}
+  - {x: 4.0560503, y: .0329530239, z: -4.35512686}
+  - {x: 1.78218651, y: .91621089, z: -5.91984606}
+  - {x: 1.78218651, y: -1.51038575, z: -6.10067034}
+  - {x: 5.9438386, y: .4863832, z: -6.10902739}
+  - {x: 5.9438386, y: -1.51038575, z: -6.08360147}
+  - {x: 3.81753445, y: .51328826, z: 22.1781483}
+  - {x: 1.17691469, y: -.695327997, z: 23.6840439}
+  - {x: .220901489, y: -1.92969918, z: 26.2300587}
+  - {x: 1.24392223, y: -.232230425, z: 27.2641125}
+  - {x: 4.09914398, y: -.701847315, z: 16.4546814}
 --- !u!1 &1545422713
 GameObject:
   m_ObjectHideFlags: 0
@@ -38725,7 +38849,7 @@ Light:
   serializedVersion: 3
   m_Type: 2
   m_Color: {r: 1, g: .709007382, b: .388059676, a: 1}
-  m_Intensity: 4
+  m_Intensity: 2
   m_Range: 2
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -38962,7 +39086,7 @@ Light:
   serializedVersion: 3
   m_Type: 2
   m_Color: {r: 1, g: .673207343, b: .24626863, a: 1}
-  m_Intensity: 2.5
+  m_Intensity: .5
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -43951,7 +44075,7 @@ Light:
   serializedVersion: 3
   m_Type: 2
   m_Color: {r: 1, g: .709007382, b: .388059676, a: 1}
-  m_Intensity: 4
+  m_Intensity: 2
   m_Range: 2
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -43970,7 +44094,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 2
+  m_Lightmapping: 1
   m_ShadowSamples: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0

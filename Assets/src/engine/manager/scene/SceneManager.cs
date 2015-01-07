@@ -48,6 +48,11 @@ namespace engine.manager
             LEngine.em.DispatchEvent(new LEvent(LEventType.AddMoveItem, mainPlayerScript));
             //绑武器
             Tools.AddBinding(LEngine.rm.Load("role/1/weapon1"), mainPlayer, "Bip001 Weapons");
+            //SkinnedMeshRenderer[] renders = mainPlayer.GetComponentsInChildren<SkinnedMeshRenderer>();
+            //foreach (SkinnedMeshRenderer r in renders)
+            //{
+            //    r.useLightProbes = true;
+            //}
             //初始化摄像机
             mainCamera = GameObject.Find("Main Camera");
             mainCameraScript = mainCamera.AddComponent<SCamera>();
