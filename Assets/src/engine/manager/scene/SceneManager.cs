@@ -58,7 +58,8 @@ namespace engine.manager
             mainCameraScript = mainCamera.AddComponent<SCamera>();
             mainCameraScript.SetTarget(mainPlayer.transform);
             //初始化场景
-            Application.LoadLevel("scene2");
+            Application.LoadLevel("Demo6");
+            //Application.LoadLevel("scene2");
             Timer.AddTimer(InitNavAgent, 1);
             
         }

@@ -9,9 +9,17 @@ namespace engine.manager
 
     public class KeyManager
     {
+        public int maxTarDis = 50;
+
         private bool _btn1State = false;
         private float _repetTime = 0.3f;
         private float _passTime = 0f;
+        private GameObject _joyStick = null;
+        private Transform _joyStickTrans = null;
+        private Transform _joyTarTrans = null;
+        private GameObject _uiRoot = null;
+        private bool _isKeyboardMove = false;
+
         public KeyManager()
         {
             InitEvent();
@@ -26,21 +34,12 @@ namespace engine.manager
 
         private void InitJoy()
         {
-            GameObject tar = GameObject.Find("joyTarget");
-            UIJoystick joy = tar.GetComponent<UIJoystick>();
-            joy.dragMove += DragMove;
-        }
-
-        private void DragMove(Vector2 dir)
-        {
-            if (dir == Vector2.zero)
-            {
-                LEngine.em.DispatchEvent(new LEvent(LEventType.KeyEvent));
-            }
-            else
-            {
-                LEngine.em.DispatchEvent(new LEvent(LEventType.KeyEvent, dir));
-            }
+            _joyStick = GameObject.Find("joystick");
+            _joyStickTrans = _joyStick.transform;
+            _joyTarTrans = GameObject.Find("joyTarget").transform;
+            _uiRoot = GameObject.Find("UI Root");
+            UIEventListener.Get(_uiRoot).onPress = OnRootPress;
+            _joyStick.SetActive(false);
         }
 
         private void InitSkill()
@@ -108,6 +107,89 @@ namespace engine.manager
                     //LEngine.sm.mainPlayerScript.ia.SetSwitch("2att", true);
                     LEngine.em.DispatchEvent(new LEvent(LEventType.KeyEvent, "2att"));
                 }
+            }
+            KeyBoardMove();
+        }
+
+        private void OnRootPress(GameObject btn, bool state)
+        {
+            if (state)
+            {
+                Vector3 pos = Input.mousePosition;
+                if (pos.magnitude < Mathf.Min(Screen.width, Screen.height) * 0.9)
+                {
+                    pos.x -= Screen.width / 2;
+                    pos.y -= Screen.height / 2;
+                    _joyStickTrans.localPosition = pos;
+                    _joyTarTrans.localPosition = Vector3.zero;
+                    _joyStick.SetActive(true);
+                    UIEventListener.Get(_uiRoot).onDrag += OnRootDrag;
+                    return;
+                }
+            }
+            _joyStick.SetActive(false);
+            UIEventListener.Get(_uiRoot).onDrag -= OnRootDrag;
+            DragMove(Vector2.zero);
+        }
+
+        private void OnRootDrag(GameObject go, Vector2 delta)
+        {
+            Vector3 pos = Input.mousePosition;
+            pos.x -= Screen.width / 2;
+            pos.y -= Screen.height / 2;
+            pos = pos - _joyStickTrans.localPosition;
+            if (pos.magnitude > maxTarDis)
+            {
+                pos.Normalize();
+                pos.x *= maxTarDis;
+                pos.y *= maxTarDis;
+            }
+            _joyTarTrans.localPosition = pos;
+            pos.Normalize();
+            DragMove(pos);
+        }
+
+        private void KeyBoardMove()
+        {
+            Vector2 dir = Vector2.zero;
+            if (Input.GetKey(KeyCode.W))
+            {
+                dir.y += 1;
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                dir.x -= 1;
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                dir.y -= 1;
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                dir.x += 1;
+            }
+            if(dir != Vector2.zero)
+            {
+                _isKeyboardMove = true;
+                dir.Normalize();
+                DragMove(dir);
+            }
+            else if(_isKeyboardMove)
+            {
+                DragMove(dir);
+            }
+        }
+
+        private void DragMove(Vector2 dir)
+        {
+            //Log.Trace(Time.time);
+            if (dir == Vector2.zero)
+            {
+                LEngine.em.DispatchEvent(new LEvent(LEventType.KeyEvent));
+            }
+            else
+            {
+                LEngine.em.DispatchEvent(new LEvent(LEventType.KeyEvent, dir));
             }
         }
 

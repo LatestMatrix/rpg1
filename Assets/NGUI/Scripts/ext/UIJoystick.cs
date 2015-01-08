@@ -32,8 +32,6 @@ public class UIJoystick : MonoBehaviour
     protected Collider2D mCollider2D;
     protected UIRoot mRoot;
     protected int mTouchID = int.MinValue;
-    protected float mDragStartTime = 0f;
-    protected bool mPressed = false;
     protected bool mDragging = false;
     private Vector2 local_pos;
     private float passTime = 0f;
@@ -48,20 +46,6 @@ public class UIJoystick : MonoBehaviour
         mCollider = collider;
         mCollider2D = collider2D;
         local_pos = new Vector2();
-    }
-
-    /// <summary>
-    /// Record the time the item was pressed on.
-    /// </summary>
-
-    protected void OnPress(bool isPressed)
-    {
-        if (isPressed)
-        {
-            mDragStartTime = RealTime.time + pressAndHoldDelay;
-            mPressed = true;
-        }
-        else mPressed = false;
     }
 
     /// <summary>
@@ -136,7 +120,7 @@ public class UIJoystick : MonoBehaviour
     /// Drop the dragged item.
     /// </summary>
 
-    public void StopDragging(GameObject go)
+    protected void StopDragging(GameObject go)
     {
         if (mDragging)
         {

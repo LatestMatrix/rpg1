@@ -31,7 +31,7 @@ namespace engine.manager
         private void LoadUI()
         {
             GameObject obj = Resources.Load<GameObject>("ui/joystick");
-            NGUITools.AddChild(NGUITools.FindCameraForLayer((obj).layer).gameObject, obj);
+            NGUITools.AddChild(NGUITools.FindCameraForLayer((obj).layer).gameObject, obj).name = "joystick";
             obj = Resources.Load<GameObject>("ui/skillArea");
             NGUITools.AddChild(NGUITools.FindCameraForLayer((obj).layer).gameObject, obj);
         }
