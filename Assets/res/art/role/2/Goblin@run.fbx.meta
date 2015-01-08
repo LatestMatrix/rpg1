@@ -171,7 +171,7 @@ ModelImporter:
           Clavicle/Bip001 R UpperArm/Bip001 R Forearm/Bip001 R Hand
         weight: 1
       - path: Bip001/Bip001 Prop1
-        weight: 0
+        weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
     isReadable: 1
