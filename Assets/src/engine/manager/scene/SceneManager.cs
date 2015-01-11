@@ -38,6 +38,15 @@ namespace engine.manager
             _monster = GameObject.Find("Monster");
             _npc = GameObject.Find("Npc");
             _scene = GameObject.Find("Scene");
+           
+            //初始化场景
+            Application.LoadLevel("Demo6");
+            //Application.LoadLevel("scene2");
+            Timer.AddTimer(InitMain, 1);
+        }
+
+        private void InitMain()
+        {
             //初始化主角
             mainPlayer = Tools.Instance(LEngine.rm.Load("role/1/role1"), _player);
             mainPlayer.name = "MainRole";
@@ -57,17 +66,16 @@ namespace engine.manager
             mainCamera = GameObject.Find("Main Camera");
             mainCameraScript = mainCamera.AddComponent<SCamera>();
             mainCameraScript.SetTarget(mainPlayer.transform);
-            //初始化场景
-            Application.LoadLevel("Demo6");
-            //Application.LoadLevel("scene2");
-            Timer.AddTimer(InitNavAgent, 1);
-            
+
+            InitNavAgent();
         }
 
         private void InitNavAgent()
         {
             NavMeshAgent na = mainPlayer.AddComponent<NavMeshAgent>();
         }
+
+        
 
     }
 }

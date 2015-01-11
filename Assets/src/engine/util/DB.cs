@@ -34,11 +34,11 @@ public class DB
                 _dbConnection.SetPassword(password);
             }
             _dbConnection.Open();
-            Log.Trace("Connected to db " + _name);
+            Log.UILog("Connected to db " + _name);
         }
         catch (Exception e)
         {
-            Log.Error(e.ToString());
+            Log.UILog("db error " + e.ToString());
         }
     }
 
@@ -60,7 +60,7 @@ public class DB
             _dbConnection.Close();
         }
         _dbConnection = null;
-        Log.Trace("Disconnected from db " + _name);
+        Log.UILog("Disconnected from db " + _name);
     }
 
     public void ChangePassword(string password)
@@ -71,7 +71,7 @@ public class DB
         }
         catch (Exception e)
         {
-            Log.Error(e.ToString());
+            Log.UILog("db error " + e.ToString());
         }
     }
 

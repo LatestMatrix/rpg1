@@ -40,7 +40,24 @@ public class Main : MonoBehaviour
 
     private void OnGUI()
     {
-        GUILayout.Label("FPS:" + (1 / Time.deltaTime).ToString("f0"));
+        GUILayout.BeginArea(new Rect(0, 0, 300, 800));
+        {
+            GUILayout.Label("FPS:" + (1 / Time.deltaTime).ToString("f0"));
+            //
+            //int count = Input.touchCount;
+            //GUILayout.Label(count.ToString());
+            //for (int i = 0; i < count; i++)
+            //{
+            //    GUILayout.Label(Input.GetTouch(i).fingerId + "-" +Input.GetTouch(i).position.ToString());
+            //}
+            //
+            int count = Log.UIMessageList.Count;
+            for (int i = 0; i < count; i++)
+            {
+                GUILayout.Label(Log.UIMessageList[i]);
+            }
+        }
+        GUILayout.EndArea();
     }
 
 }

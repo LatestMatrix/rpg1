@@ -72,8 +72,8 @@ namespace engine.core.anim
 
             _states.Add("att11", att11);
             att11.tris.Add(new LStateTrigger(
-                att11, run, 0, true, new LSwitchCondition(_switch["2run"], Condition.EQUAL, true)));
-            att11.tris.Add(new LStateTrigger(att11, stand, 0, true));
+                att11, run, 0.1f, true, new LSwitchCondition(_switch["2run"], Condition.EQUAL, true)));
+            att11.tris.Add(new LStateTrigger(att11, stand, 0.1f, true));
 
             _states.Add("att2", att2);
             att2.tris.Add(new LStateTrigger(
@@ -88,8 +88,8 @@ namespace engine.core.anim
 
             _states.Add("att21", att21);
             att21.tris.Add(new LStateTrigger(
-                att21, run, 0, true, new LSwitchCondition(_switch["2run"], Condition.EQUAL, true)));
-            att21.tris.Add(new LStateTrigger(att21, stand, 0, true));
+                att21, run, 0.1f, true, new LSwitchCondition(_switch["2run"], Condition.EQUAL, true)));
+            att21.tris.Add(new LStateTrigger(att21, stand, 0.1f, true));
 
             _states.Add("att3", att3);
             att3.tris.Add(new LStateTrigger(
@@ -104,8 +104,8 @@ namespace engine.core.anim
 
             _states.Add("att31", att31);
             att31.tris.Add(new LStateTrigger(
-                att31, run, 0, true, new LSwitchCondition(_switch["2run"], Condition.EQUAL, true)));
-            att31.tris.Add(new LStateTrigger(att31, stand, 0, true));
+                att31, run, 0.1f, true, new LSwitchCondition(_switch["2run"], Condition.EQUAL, true)));
+            att31.tris.Add(new LStateTrigger(att31, stand, 0.1f, true));
 
             _states.Add("att4", att4);
             att4.tris.Add(new LStateTrigger(
@@ -118,13 +118,13 @@ namespace engine.core.anim
 
             _states.Add("att41", att41);
             att41.tris.Add(new LStateTrigger(
-                att41, run, 0, true, new LSwitchCondition(_switch["2run"], Condition.EQUAL, true)));
+                att41, run, 0.1f, true, new LSwitchCondition(_switch["2run"], Condition.EQUAL, true)));
             att41.tris.Add(new LStateTrigger(att41, att42, 0, true));
 
             _states.Add("att42", att42);
             att42.tris.Add(new LStateTrigger(
-                att42, run, 0, true, new LSwitchCondition(_switch["2run"], Condition.EQUAL, true)));
-            att42.tris.Add(new LStateTrigger(att42, stand, 0, true));
+                att42, run, 0.1f, true, new LSwitchCondition(_switch["2run"], Condition.EQUAL, true)));
+            att42.tris.Add(new LStateTrigger(att42, stand, 0.1f, true));
 
             _states.Add("skill1", skill1);
             skill1.tris.Add(new LStateTrigger(
@@ -135,8 +135,8 @@ namespace engine.core.anim
 
             _states.Add("skill11", skill11);
             skill11.tris.Add(new LStateTrigger(
-                skill11, run, 0, true, new LSwitchCondition(_switch["2run"], Condition.EQUAL, true)));
-            skill11.tris.Add(new LStateTrigger(skill11, stand, 0, true));
+                skill11, run, 0.1f, true, new LSwitchCondition(_switch["2run"], Condition.EQUAL, true)));
+            skill11.tris.Add(new LStateTrigger(skill11, stand, 0.1f, true));
 
             _states.Add("skill2", skill2);
             skill2.tris.Add(new LStateTrigger(
@@ -148,8 +148,8 @@ namespace engine.core.anim
 
             _states.Add("skill21", skill21);
             skill21.tris.Add(new LStateTrigger(
-                skill21, run, 0, true, new LSwitchCondition(_switch["2run"], Condition.EQUAL, true)));
-            skill21.tris.Add(new LStateTrigger(skill21, stand, 0, true));
+                skill21, run, 0.1f, true, new LSwitchCondition(_switch["2run"], Condition.EQUAL, true)));
+            skill21.tris.Add(new LStateTrigger(skill21, stand, 0.1f, true));
 
             _states.Add("skill3", skill3);
             skill3.tris.Add(new LStateTrigger(
@@ -160,8 +160,8 @@ namespace engine.core.anim
 
             _states.Add("skill31", skill31);
             skill31.tris.Add(new LStateTrigger(
-                skill31, run, 0, true, new LSwitchCondition(_switch["2run"], Condition.EQUAL, true)));
-            skill31.tris.Add(new LStateTrigger(skill31, stand, 0, true));
+                skill31, run, 0.1f, true, new LSwitchCondition(_switch["2run"], Condition.EQUAL, true)));
+            skill31.tris.Add(new LStateTrigger(skill31, stand, 0.1f, true));
         }
 
         override protected void InitSwitch()

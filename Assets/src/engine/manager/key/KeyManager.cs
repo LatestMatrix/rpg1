@@ -10,17 +10,22 @@ namespace engine.manager
     public class KeyManager
     {
         public int maxTarDis = 50;
+        public float range = 0.8f;
+
+        private Transform _joyTarTrans = null;
+        private GameObject _uiRoot = null;
+        private int _touchFiger = -1;
 
         private bool _btn1State = false;
         private float _repetTime = 0.3f;
         private float _passTime = 0f;
         private GameObject _joyStick = null;
         private Transform _joyStickTrans = null;
-        private Transform _joyTarTrans = null;
-        private GameObject _uiRoot = null;
+
         private bool _isKeyboardMove = false;
-        private bool _isDragMove = false;
-        private int _joyFigerID = -1;
+        private Vector3 _pos;
+        private bool _state = false;
+        private bool _lastState = false;
 
         public KeyManager()
         {
@@ -113,118 +118,27 @@ namespace engine.manager
             KeyBoardMove();
         }
 
-        private Vector3 GetJoyAreaPos(float range)
-        {
-            if (Input.touchCount > 0)
-            {
-                int count = Input.touchCount;
-                Vector3 pos;
-                if (_joyFigerID >= 0)
-                {
-                    for (int i = 0; i < count; i++)
-                    {
-                        if (Input.touches[i].fingerId == _joyFigerID)
-                        {
-                            return Input.touches[i].position;
-                        }
-                    }
-                }
-                else
-                {
-                    for (int i = 0; i < count; i++)
-                    {
-                        pos = Input.touches[i].position;
-                        if (range == 0f || pos.magnitude < Mathf.Min(Screen.width, Screen.height) * range)
-                        {
-                            _joyFigerID = Input.touches[i].fingerId;
-                            return pos;
-                        }
-                    }
-                }
-                _joyFigerID = -1;
-            }
-            else
-            {
-                return Input.mousePosition;
-            }
-            _joyFigerID = -1;
-            return Vector3.zero;
-        }
-
-        private bool IsInJoyArea(float range)
-        {
-            Vector3 pos = GetJoyAreaPos(range);
-            if ((_joyFigerID < 0 && Input.touchCount > 0) || 
-                pos.magnitude > Mathf.Min(Screen.width, Screen.height) * range)
-            {
-                return false;
-            }
-            return true;
-        }
-
-        private void OnRootPress(GameObject btn, bool state)
-        {
-            if (IsInJoyArea(0.7f) == false)
-            {
-                return;
-            }
-            if (state && _isDragMove == false)
-            {
-                Vector3 pos = GetJoyAreaPos(0.8f);
-                pos.x -= Screen.width / 2;
-                pos.y -= Screen.height / 2;
-                _joyStickTrans.localPosition = pos;
-                _joyTarTrans.localPosition = Vector3.zero;
-                _joyStick.SetActive(true);
-                _isDragMove = true;
-                UIEventListener.Get(_uiRoot).onDrag += OnRootDrag;
-            }
-            else if (_joyFigerID < 0 || TouchFigerLeave())
-            {
-                _joyStick.SetActive(false);
-                _isDragMove = false;
-                UIEventListener.Get(_uiRoot).onDrag -= OnRootDrag;
-                DragMove(Vector2.zero);
-            }
-        }
-
-        private bool TouchFigerLeave()
-        {
-            if (_joyFigerID >= 0)
-            {
-                int count = Input.touchCount;
-                for (int i = 0; i < count; i++)
-                {
-                    if (Input.touches[i].fingerId == _joyFigerID && 
-                        (Input.touches[i].phase == TouchPhase.Ended ||
-                        Input.touches[i].phase == TouchPhase.Canceled))
-                    {
-                        return true;
-                    }
-                }
-            }
-            return false;
-        }
-
         private void OnRootDrag(GameObject go, Vector2 delta)
         {
-            if (IsInJoyArea(0.8f) == false || _isDragMove == false)
+            _pos = Vector3.zero;
+            GetInfo();
+            if (_lastState != _state)
             {
                 return;
             }
-            Vector3 pos = GetJoyAreaPos(0f);
-            pos.x -= Screen.width / 2;
-            pos.y -= Screen.height / 2;
-            pos = pos - _joyStickTrans.localPosition;
-            if (pos.magnitude > maxTarDis)
+
+            _pos.x -= Screen.width / 2;
+            _pos.y -= Screen.height / 2;
+            _pos = _pos - _joyStickTrans.localPosition;
+            if (_pos.magnitude > maxTarDis)
             {
-                pos.Normalize();
-                pos.x *= maxTarDis;
-                pos.y *= maxTarDis;
+                _pos.Normalize();
+                _pos.x *= maxTarDis;
+                _pos.y *= maxTarDis;
             }
-            _joyTarTrans.localPosition = pos;
-            pos.Normalize();
-            DragMove(pos);
+            _joyTarTrans.localPosition = _pos;
+            _pos.Normalize();
+            DragMove(_pos);
         }
 
         private void KeyBoardMove()
@@ -257,6 +171,115 @@ namespace engine.manager
                 _isKeyboardMove = false;
                 DragMove(dir);
             }
+        }
+
+        private void OnRootPress(GameObject btn, bool state)
+        {
+            _state = state;
+            _pos = Vector3.zero;
+            GetInfo();
+            //Log.UILog("dg " + _lastState + "," + _info.state + "," + _info.isIn + "," + Input.touchCount);
+            if (_lastState == _state)
+            {
+                return;
+            }
+            if (_state)
+            {
+                //Log.UILog("show");
+                _pos.x -= Screen.width / 2;
+                _pos.y -= Screen.height / 2;
+                _joyStickTrans.localPosition = _pos;
+                _joyTarTrans.localPosition = Vector3.zero;
+                _joyStick.SetActive(true);
+                UIEventListener.Get(_uiRoot).onDrag += OnRootDrag;
+            }
+            else
+            {
+                //Log.UILog("hide");
+                _joyStick.SetActive(false);
+                UIEventListener.Get(_uiRoot).onDrag -= OnRootDrag;
+                DragMove(Vector2.zero);
+            }
+            _lastState = _state;
+        }
+
+        private void GetInfo()
+        {
+            if (Input.touchCount == 0)
+            {
+                GetMouseInfo();
+            }
+            else
+            {
+                GetTouchInfo();
+            }
+        }
+
+        private void GetMouseInfo()
+        {
+            _pos = Input.mousePosition;
+            bool isIn = IsInJoyArea(_pos);
+            if(_state == true && _lastState == false && isIn == false)
+            {
+                _state = false;
+            }
+        }
+
+        private void GetTouchInfo()
+        {
+            _state = false;
+            int count = Input.touchCount;
+            //Log.UILog(count + "==============" + _touchFiger);
+            if (_touchFiger == -1)
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    Touch t = Input.GetTouch(i);
+                    if (t.phase == TouchPhase.Began && IsInJoyArea(t.position))
+                    {
+                        _pos = t.position;
+                        _touchFiger = t.fingerId;
+                        _state = true;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    Touch t = Input.GetTouch(i);
+                    if (t.fingerId == _touchFiger)
+                    {
+                        _pos = t.position;
+                        _state = GetTouchState(t);
+                        if (_state == false)
+                        {
+                            _touchFiger = -1;
+                        }
+                        //Log.UILog(
+                        //    "fig = " + t.fingerId +
+                        //    "pos = " + _info.pos.ToString() +
+                        //    "tp = " + t.phase.ToString() + "," + _info.state.ToString() + "," + _info.isIn.ToString());
+                        break;
+                    }
+                }
+            }
+        }
+
+        private bool GetTouchState(Touch t)
+        {
+            if (t.phase == TouchPhase.Canceled ||
+                t.phase == TouchPhase.Ended)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private bool IsInJoyArea(Vector3 pos)
+        {
+            return pos.magnitude < Mathf.Min(Screen.width, Screen.height) * range;
         }
 
         private void DragMove(Vector2 dir)

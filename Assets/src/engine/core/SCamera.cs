@@ -21,7 +21,6 @@ namespace engine.core
 
         void Start()
         {
-            DontDestroyOnLoad(gameObject);
             _cam = gameObject.GetComponent<Transform>();
             rotation = Quaternion.Euler(45, 0, 0);
             scale = 4;

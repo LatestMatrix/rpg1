@@ -379,19 +379,19 @@ ModelImporter:
     - boneName: Bip001 L Hand
       humanName: LeftHand
       limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
+        min: {x: 0, y: -180, z: -180}
+        max: {x: 0, y: 180, z: 180}
         value: {x: 0, y: 0, z: 0}
         length: 0
-        modified: 0
+        modified: 1
     - boneName: Bip001 R Hand
       humanName: RightHand
       limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
+        min: {x: 0, y: -180, z: -180}
+        max: {x: 0, y: 180, z: 180}
         value: {x: 0, y: 0, z: 0}
         length: 0
-        modified: 0
+        modified: 1
     - boneName: Bip001 L Toe0
       humanName: LeftToes
       limit:

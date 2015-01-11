@@ -11,6 +11,8 @@ public class Log
     public static int WC = 0xFF;
     public static int EC = 0xFF;
 
+    public static List<string> UIMessageList = new List<string>();
+
     public static void Trace(object message, int channel = 1)
     {
         if ((channel & LC) != 0)
@@ -32,6 +34,15 @@ public class Log
         if ((channel & EC) != 0)
         {
             Debug.LogError(message);
+        }
+    }
+
+    public static void UILog(string message)
+    {
+        UIMessageList.Add(message);
+        if(UIMessageList.Count > 20)
+        {
+            UIMessageList.RemoveAt(0);
         }
     }
 
