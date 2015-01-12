@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<AssetbundleConfig>
+  <!--
+打包好的文件的保存路径。
+绝对路径或是目录下的相对路径。
+如果该标签不存在或是该文件夹不存在，将保存到"项目路径/AssetBundle".
+-->
+
+  <!--<SavePath Value="/"/>-->
+  <SavePath Value="StreamingAssets/"/>
+
+  <!--
+ 每个Bundle标签打一个包，必须包含Name。
+ Bundle下的File支持文件夹和文件，文件夹时，只打包文件夹下面的文件，不递归处理里面的文件夹。
+  -->
+
+  <!--Test开始-->
+  <!--<Bundle Name ="Res.ui.joyStickPanel">
+    <File Path="Design\Prefeb\Joy.prefab"/>
+  </Bundle>-->
+  <!--Test结l束-->
+</AssetbundleConfig>

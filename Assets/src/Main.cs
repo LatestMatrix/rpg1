@@ -13,18 +13,13 @@ public class Main : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(gameObject);
-        GameObject uiRoot = GameObject.Find("UI Root");
-        uiRoot.AddComponent<engine.Retain>();
-        GameObject monster = GameObject.Find("Monster");
-        monster.AddComponent<engine.Retain>();
-        GameObject player = GameObject.Find("Player");
-        player.AddComponent<engine.Retain>();
-        GameObject npc = GameObject.Find("Npc");
-        npc.AddComponent<engine.Retain>();
-        GameObject timer = GameObject.Find("Timer");
-        timer.AddComponent<engine.Retain>();
-        GameObject camera = GameObject.Find("Main Camera");
-        camera.AddComponent<engine.Retain>();
+        DontDestroyOnLoad(GameObject.Find("UI Root"));
+        DontDestroyOnLoad(GameObject.Find("Main Camera"));
+
+        DontDestroyOnLoad(new GameObject("Monster"));
+        DontDestroyOnLoad(new GameObject("Player"));
+        DontDestroyOnLoad(new GameObject("Npc"));
+        DontDestroyOnLoad(new GameObject("Timer"));
 
         LEngine.ma = this;
         LEngine.em = new EventManager();
@@ -56,14 +51,6 @@ public class Main : MonoBehaviour
         GUILayout.BeginArea(new Rect(0, 0, 300, 800));
         {
             GUILayout.Label("FPS:" + (1 / Time.deltaTime).ToString("f0"));
-            //
-            //int count = Input.touchCount;
-            //GUILayout.Label(count.ToString());
-            //for (int i = 0; i < count; i++)
-            //{
-            //    GUILayout.Label(Input.GetTouch(i).fingerId + "-" +Input.GetTouch(i).position.ToString());
-            //}
-            //
             int count = Log.UIMessageList.Count;
             for (int i = 0; i < count; i++)
             {
