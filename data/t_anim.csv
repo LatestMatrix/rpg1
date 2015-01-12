@@ -1,0 +1,26 @@
+p_key,c_role_name,c_anim_name,c_frame,c_anim_loop,c_can_move
+"主键
+不能为空","角色名
+不能为空","动作名
+不能为空","动作帧数
+不能为空","动作是否循环
+默认false","动作播放中是否能移动
+默认false"
+INTEGER Primary Key,CHAR(10),CHAR(10),INTEGER,BOOLEAN,BOOLEAN
+1,main,stand,40,true,false
+2,main,run,22,true,true
+3,main,att1,11,false,false
+4,main,att11,5,false,false
+5,main,att2,12,false,false
+6,main,att21,5,false,false
+7,main,att3,13,false,false
+8,main,att31,5,false,false
+9,main,att4,15,false,false
+10,main,att41,13,false,false
+11,main,att42,6,false,false
+12,main,skill1,23,false,false
+13,main,skill11,6,false,false
+14,main,skill2,6,true,true
+15,main,skill21,15,false,false
+16,main,skill3,10,false,false
+17,main,skill31,6,false,false
