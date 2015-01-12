@@ -8,15 +8,14 @@ namespace engine.manager
 {
     public class ResManager
     {
+        private string configDir = "/config";
         private string configFile = "/config/config.sqlite";
 
         public ResManager()
         {
 #if UNITY_EDITOR
-            Log.UILog("pc");
-            LoadConfigFile(Application.dataPath + "/Plugins/Android/assets/" + configFile);
+            LoadConfigFile(Application.dataPath + "/StreamingAssets" + configFile);
 #else
-            Log.UILog("mobile");
             CopyFile();
             LoadConfigFile(Application.persistentDataPath + configFile);
 #endif
@@ -25,34 +24,37 @@ namespace engine.manager
 
         private void CopyFile()
         {
-            Log.UILog("copy file");
-            string filepath = Application.persistentDataPath + configFile;
-            if (!File.Exists(filepath))
+            string fromFilePath = Application.streamingAssetsPath + configFile;
+            string toFilePath = Application.persistentDataPath + configFile;
+            string toFileDir = Application.persistentDataPath + configDir;
+            try
             {
-                Log.UILog("copy from " + Application.streamingAssetsPath + configFile);
-                Log.UILog("file exist? " + File.Exists(Application.streamingAssetsPath + configFile).ToString());
-                Log.UILog(Application.dataPath);
-                try
+                WWW loadDB = new WWW(fromFilePath);
+                while (!loadDB.isDone)
                 {
-                    WWW loadDB = new WWW(Application.streamingAssetsPath + configFile);
-                    Log.UILog(loadDB.error);
-                    while (!loadDB.isDone)
-                    {
-                    }
-                    File.WriteAllBytes(filepath, loadDB.bytes);
                 }
-                catch (System.Exception e) 
+                if (!Directory.Exists(toFileDir))
                 {
-                    Log.UILog(e.Message);
+                    Directory.CreateDirectory(toFileDir);
                 }
-                
-                Log.UILog("copy to " + Application.persistentDataPath + configFile);
+                File.WriteAllBytes(toFilePath, loadDB.bytes);
+            }
+            catch (System.Exception e)
+            {
+                Log.UILog(e.Message);
             }
         }
 
         private void LoadConfigFile(string file)
         {
+#if UNITY_EDITOR
+            DB db = new DB("Data Source=" + file);
+#elif UNITY_ANDROID
+            DB db = new DB("URI=file:" + file);
+#else
             DB db = new DB(@"Data Source=" + file);
+#endif
+
             SqliteDataReader reader = db.ReadFullTable("config");
             while (reader.Read())
             {

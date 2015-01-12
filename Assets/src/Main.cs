@@ -13,6 +13,19 @@ public class Main : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(gameObject);
+        GameObject uiRoot = GameObject.Find("UI Root");
+        uiRoot.AddComponent<engine.Retain>();
+        GameObject monster = GameObject.Find("Monster");
+        monster.AddComponent<engine.Retain>();
+        GameObject player = GameObject.Find("Player");
+        player.AddComponent<engine.Retain>();
+        GameObject npc = GameObject.Find("Npc");
+        npc.AddComponent<engine.Retain>();
+        GameObject timer = GameObject.Find("Timer");
+        timer.AddComponent<engine.Retain>();
+        GameObject camera = GameObject.Find("Main Camera");
+        camera.AddComponent<engine.Retain>();
+
         LEngine.ma = this;
         LEngine.em = new EventManager();
         LEngine.sm = new SceneManager();
