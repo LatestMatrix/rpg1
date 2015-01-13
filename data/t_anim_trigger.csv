@@ -1,15 +1,3 @@
-p_key,c_role_name,c_from_anim,c_to_anim,c_fade_time,c_trigger_end,c_conditions
-"主键
-不能为空","角色名
-不能为空","起始动作
-不能为空","目标动作
-不能为空","过度时间
-除10是实际值
-默认值0","动作结尾结算
-1 是
-0 随时结算","触发条件
-如果是多个,隔开"
-INTEGER Primary Key,CHAR(10),CHAR(10),CHAR(10),INTEGER,BOOLEAN,CHAR(10)
 1,main,stand,run,2,false,2run
 2,main,stand,att1,0,false,2att
 3,main,stand,skill1,0,false,2skill1
